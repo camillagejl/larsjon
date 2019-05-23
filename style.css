@@ -9,6 +9,7 @@
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-design-color: #020c2e;
+    --main-background-color: #fcfcfc;
 }
 
 html {
@@ -24,17 +25,19 @@ img {
 }
 
 h1,
-h2{
+h2
+{
     border-top: 1px solid var(--main-design-color);
     width: fit-content;
+    margin: 100px 0 20px 0;
 }
 
 
 /*----- NAVIGATION -----*/
-aside {
+nav {
     height: 100vh;
-    width: 300px;
-    padding: 0 25px;
+    width: 90vw;
+    padding: 0 5vw;
     background-color: var(--main-design-color);
     position: fixed;
     left: 0;
@@ -42,15 +45,16 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 99;
 }
 
-aside ul {
+nav ul {
     padding: 0 0 200px 0;
     list-style: none;
     margin: 0;
 }
 
-aside a {
+nav a {
     color: white;
     text-decoration: none;
 }
@@ -60,17 +64,41 @@ aside a {
 
 header {
     height: 100vh;
-    background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header_arrow {
+    position: absolute;
+    bottom: 10px;
+}
+
+.burger_menu {
+    width: 94vw;
+    height: 20px;
+    padding: 3vw;
+    background-color: var(--main-background-color);
+    text-align: right;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.burger_menu img {
+    height: 100%;
+    width: auto;
 }
 
 
 /*----- MAIN -----*/
 
 main {
-    padding-left: 200px;
-    margin: 5vh auto;
     max-width: 1300px;
-
+    padding: 10px;
 }
 
 section {
@@ -80,15 +108,11 @@ section {
 }
 
 .page {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 50px 0;
  }
-
-.content {
-    display: flex;
-    flex-direction: row;
-}
 
 .page:nth-of-type(even) .content {
     background-color: lightgrey;
@@ -124,4 +148,10 @@ footer {
     background-color: var(--main-design-color);
     text-align: center;
     line-height: 50px;
+}
+
+/*----- HELPERS -----*/
+
+.hidden {
+    display: none;
 }

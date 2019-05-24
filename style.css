@@ -1,42 +1,86 @@
 /*1. GENERAL*/
+/*1.1 TEXT*/
+
 /*2. NAVIGATION*/
+/*2.1 BURGER MENU*/
+/*2.2 NAV*/
+
 /*3. HEADER*/
+
 /*4. MAIN*/
+/*4.1 SECTION*/
+/*4.2 SUB-SECTION*/
+/*4.3 GALLERY*/
+/*4.4 WEBSHOP*/
 
+/*5. FOOTER*/
 
-/*----- GENERAL -----*/
+/*6. HELPERS*/
+
+/*----- 1. GENERAL -----*/
 
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-design-color: #020c2e;
     --main-background-color: #fcfcfc;
+    --main-padding: 10px; /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
 }
+
+body {
+    margin: 0; /*Fjerner standard margin på 8px fra siden*/
+}
+
+img {
+    width: 100%; /*Gør at billeder passer ind i div'er i stedet for at vises i fuld størrelse*/
+}
+
+
+/*--- 1.1 TEXT ---*/
 
 html {
     font-family: var(--main-body-font);
 }
 
-body {
-    margin: 0;
-}
-
-img {
-    width: 100%;
-}
-
+/*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
 h1,
 h2
 {
     border-top: 1px solid var(--main-design-color);
     width: fit-content;
-    margin: 100px 0 20px 0;
+}
+
+/*Gør at h1 har luft over- og under, og lige så meget padding i siderne som resten af siden*/
+h1 {
+    margin: 20vh var(--main-padding);
 }
 
 
-/*----- NAVIGATION -----*/
+/*----- 2. NAVIGATION -----*/
+
+/*--- 2.1 BURGER MENU ---*/
+.burger_menu {
+    width: 94vw; /*Sat til 94, så det bliver 100 sammen med padding*/
+    height: 20px;
+    padding: 3vw;
+    background-color: var(--main-background-color);
+    text-align: right;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
+    position: fixed;
+    top: 0;
+    z-index: 100; /*Menuen ligger altid øverst*/
+}
+
+.burger_menu img {
+    height: 100%;
+    width: auto;
+}
+
+
+/*--- 2.2 NAV ---*/
+
 nav {
     height: 100vh;
-    width: 90vw;
+    width: 90vw; /*Sat til 90 så det bliver 100 med padding*/
     padding: 0 5vw;
     background-color: var(--main-design-color);
     position: fixed;
@@ -48,9 +92,10 @@ nav {
     z-index: 99;
 }
 
+/*Liste med menupunkter*/
 nav ul {
-    padding: 0 0 200px 0;
-    list-style: none;
+    padding: 0 0 200px 0; /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
+    list-style: none; /*Fjerner standard list-styling (dvs. bullets)*/
     margin: 0;
 }
 
@@ -60,85 +105,123 @@ nav a {
 }
 
 
-/*----- HEADER -----*/
+/*----- 3. HEADER -----*/
 
 header {
-    height: 100vh;
+    height: 100vh; /*Skal altid være lige så høj som skærmen*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    position: relative;
+}
+
+/*Logo i toppen af mobil-versionen*/
+.mobile_logo {
+    max-width: 70%;
+    margin-top: 7vh; /*Får logoet ned under burger-menuen*/
 }
 
 .header_arrow {
-    position: absolute;
-    bottom: 10px;
-}
-
-.burger_menu {
-    width: 94vw;
-    height: 20px;
-    padding: 3vw;
-    background-color: var(--main-background-color);
-    text-align: right;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
-    position: fixed;
-    top: 0;
-    z-index: 100;
-}
-
-.burger_menu img {
-    height: 100%;
-    width: auto;
+    width: auto; /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
 }
 
 
-/*----- MAIN -----*/
+/*----- 4. MAIN -----*/
 
 main {
-    max-width: 1300px;
-    padding: 10px;
+    max-width: 1300px; /*Sætter max på, så vi har lidt styr på, hvordan det ser ud på en større skærm*/
 }
+
+
+/*--- 4.1 SECTION ---*/
 
 section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100vh;
+    /*display: flex;*/
+    align-items: center;
+    padding: 50px 0; /*Sørger for, at der altid er noget white space omkring content-boksene*/
 }
 
-.page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 50px 0;
- }
+.content {
+    padding: var(--main-padding);
+}
 
-.page:nth-of-type(even) .content {
-    background-color: lightgrey;
-    flex-direction: row-reverse;
+/*Sørger for, at hveranden content box får baggrundsfarve*/
+section:nth-of-type(odd) .content {
+    background-color: #F3F3F3;
  }
 
 .text_content,
 .image_content {
     flex: 1;
-    padding: 20px;
 }
+
+/*Giver en streg 30px under p'er*/
+.text_content {
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--main-design-color);
+    margin-bottom: 10px;
+}
+
+
+/*--- 4.2 SUB-SECTION ---*/
+
+.sub_section {
+    margin-bottom: 150px;
+}
+
+/*Sørger for, at den sidste medarbejder ikke har margin under sectionen*/
+.sub_section:last-child {
+    margin-bottom: 0;
+}
+
+/*Centrerer navnet og stillingen på medarbejderen, uden at centrere overskrifterne på resten af siden*/
+.sub_section h3,
+.sub_section h4 {
+    width: 100%;
+    text-align: center;
+}
+
+/*--- 4.3 GALLERY ---*/
 
 .gallery {
     display: flex;
-    justify-content: space-between;
     min-height: 100vh;
     align-items: center;
+    padding: var(--main-padding);
 }
 
 .gallery img {
     background-color: lightsteelblue;
-    width: 32%;
     height: 100%;
 }
 
-/*----- FOOTER -----*/
+
+/*--- 4.4 WEBSHOP ---*/
+
+#webshop p {
+    border: none;
+}
+
+#webshop .text_content {
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--main-design-color);
+}
+
+.webshop_button {
+    max-width: 70%;
+    background-color: var(--main-design-color);
+    color: white;
+    margin: 0 auto 10px auto;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+
+/*----- 5. FOOTER -----*/
 
 footer {
     position: relative;
@@ -150,7 +233,7 @@ footer {
     line-height: 50px;
 }
 
-/*----- HELPERS -----*/
+/*----- 6. HELPERS -----*/
 
 .hidden {
     display: none;

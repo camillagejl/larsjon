@@ -179,10 +179,7 @@ section {
     /*Sørger for, at der altid er noget white space omkring content-boksene*/
 }
 
-.hvemervi .content {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+
 
 .content {
     padding: var(--main-padding);
@@ -205,6 +202,12 @@ section:nth-of-type(odd) .content {
     margin-bottom: 10px;
 }
 
+/*------------------ HVEM ER VI? --------------------*/
+.hvemervi .content {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 
 /*--------------------------------------------------------- 4.2 SUB-SECTION -------------------------------------*/
 
@@ -224,7 +227,9 @@ section:nth-of-type(odd) .content {
     text-align: center;
 }
 
-.medarbejdere {
+
+/*-------------------- MEDARBEJDERE -------------------*/
+ß .medarbejdere {
     display: grid;
     grid-template-columns: 1fr;
 }

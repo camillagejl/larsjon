@@ -229,7 +229,7 @@ section:nth-of-type(odd) .content {
 
 
 /*-------------------- MEDARBEJDERE -------------------*/
-ß .medarbejdere {
+.medarbejdere {
     display: grid;
     grid-template-columns: 1fr;
 }

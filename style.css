@@ -1,3 +1,7 @@
+/* Indholdsfortegnelse: */
+
+
+
 /*1. GENERAL*/
 /*1.1 TEXT*/
 
@@ -6,14 +10,6 @@
 /*2.2 NAV*/
 
 /*3. HEADER*/
-#myVideo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100vh;
-    z-index: -1;
-}
 
 /*4. MAIN*/
 /*4.1 SECTION*/
@@ -25,25 +21,35 @@
 
 /*6. HELPERS*/
 
-/*----- 1. GENERAL -----*/
+/*7. MEDIA QUERIES */
+
+
+
+
+
+
+/*---------------------------------------------------- 1. GENERAL ---------------------------------------*/
 
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-design-color: #020c2e;
     --main-background-color: rgba(252, 252, 252, 0.8);
-    --main-padding: 10px; /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
+    --main-padding: 10px;
+    /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
 }
 
 body {
-    margin: 0; /*Fjerner standard margin på 8px fra siden*/
+    margin: 0;
+    /*Fjerner standard margin på 8px fra siden*/
 }
 
 img {
-    width: 100%; /*Gør at billeder passer ind i div'er i stedet for at vises i fuld størrelse*/
+    width: 100%;
+    /*Gør at billeder passer ind i div'er i stedet for at vises i fuld størrelse*/
 }
 
 
-/*--- 1.1 TEXT ---*/
+/*-------------------------------------------------------- 1.1 TEXT ---------------------------------------*/
 
 html {
     font-family: var(--main-body-font);
@@ -51,23 +57,23 @@ html {
 
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
 h1,
-h2
-{
+h2 {
     border-top: 1px solid var(--main-design-color);
     width: fit-content;
 }
 
 /*Gør at h1 har luft over- og under, og lige så meget padding i siderne som resten af siden*/
 h1 {
-    margin: 20vh var(--main-padding);
+    margin: 10vh var(--main-padding);
 }
 
 
-/*----- 2. NAVIGATION -----*/
+/*---------------------------------------------------- 2. NAVIGATION ---------------------------------------*/
 
-/*--- 2.1 BURGER MENU ---*/
+/*--------------------------------------------------- 2.1 BURGER MENU -------------------------------------*/
 .burger_menu {
-    width: 94vw; /*Sat til 94, så det bliver 100 sammen med padding*/
+    width: 94vw;
+    /*Sat til 94, så det bliver 100 sammen med padding*/
     height: 20px;
     padding: 3vw;
     background-color: var(--main-background-color);
@@ -75,7 +81,8 @@ h1 {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
     position: fixed;
     top: 0;
-    z-index: 100; /*Menuen ligger altid øverst*/
+    z-index: 100;
+    /*Menuen ligger altid øverst*/
 }
 
 .burger_menu img {
@@ -84,11 +91,12 @@ h1 {
 }
 
 
-/*--- 2.2 NAV ---*/
+/*---------------------------------------------------------- 2.2 NAV ---------------------------------------*/
 
 nav {
     height: 100vh;
-    width: 90vw; /*Sat til 90 så det bliver 100 med padding*/
+    width: 90vw;
+    /*Sat til 90 så det bliver 100 med padding*/
     padding: 0 5vw;
     background-color: var(--main-design-color);
     position: fixed;
@@ -102,8 +110,10 @@ nav {
 
 /*Liste med menupunkter*/
 nav ul {
-    padding: 0 0 200px 0; /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
-    list-style: none; /*Fjerner standard list-styling (dvs. bullets)*/
+    padding: 0 0 200px 0;
+    /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
+    list-style: none;
+    /*Fjerner standard list-styling (dvs. bullets)*/
     margin: 0;
 }
 
@@ -113,10 +123,11 @@ nav a {
 }
 
 
-/*----- 3. HEADER -----*/
+/*--------------------------------------------------------- 3. HEADER ---------------------------------------*/
 
 header {
-    height: 100vh; /*Skal altid være lige så høj som skærmen*/
+    height: 100vh;
+    /*Skal altid være lige så høj som skærmen*/
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -126,24 +137,36 @@ header {
 /*Logo i toppen af mobil-versionen*/
 .mobile_logo {
     max-width: 70%;
-    margin-top: 7vh; /*Får logoet ned under burger-menuen*/
+    margin-top: 7vh;
+    /*Får logoet ned under burger-menuen*/
 }
 
 .header_arrow {
     position: absolute;
     top: 105vh;
-    width: auto; /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
+    width: auto;
+    /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
+}
+
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    z-index: -1;
 }
 
 
-/*----- 4. MAIN -----*/
+/*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
 main {
-    max-width: 1300px; /*Sætter max på, så vi har lidt styr på, hvordan det ser ud på en større skærm*/
+    max-width: 1300px;
+    /*Sætter max på, så vi har lidt styr på, hvordan det ser ud på en større skærm*/
 }
 
 
-/*--- 4.1 SECTION ---*/
+/*--------------------------------------------------------- 4.1 SECTION -------------------------------------*/
 
 section {
     display: flex;
@@ -152,7 +175,13 @@ section {
     min-height: 100vh;
     /*display: flex;*/
     align-items: center;
-    padding: 50px 0; /*Sørger for, at der altid er noget white space omkring content-boksene*/
+    /*    padding: 50px 0;*/
+    /*Sørger for, at der altid er noget white space omkring content-boksene*/
+}
+
+.hvemervi .content {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .content {
@@ -162,7 +191,7 @@ section {
 /*Sørger for, at hveranden content box får baggrundsfarve*/
 section:nth-of-type(odd) .content {
     background-color: #F3F3F3;
- }
+}
 
 .text_content,
 .image_content {
@@ -177,7 +206,7 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*--- 4.2 SUB-SECTION ---*/
+/*--------------------------------------------------------- 4.2 SUB-SECTION -------------------------------------*/
 
 .sub_section {
     margin-bottom: 150px;
@@ -195,22 +224,29 @@ section:nth-of-type(odd) .content {
     text-align: center;
 }
 
-/*--- 4.3 GALLERY ---*/
+.medarbejdere {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+
+/*--------------------------------------------------------- 4.3 GALLERY -----------------------------------------*/
 
 .gallery {
-    display: flex;
+    display: grid;
     min-height: 100vh;
     align-items: center;
     padding: var(--main-padding);
+    grid-template-columns: 1fr;
 }
 
 .gallery img {
     background-color: lightsteelblue;
-    height: 100%;
 }
 
 
-/*--- 4.4 WEBSHOP ---*/
+/*----------------------------------------------------------- 4.4 WEBSHOP -----------------------------------------*/
 
 #webshop p {
     border: none;
@@ -231,7 +267,7 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*----- 5. FOOTER -----*/
+/*------------------------------------------------------------- 5. FOOTER ----------------------------------------*/
 
 footer {
     position: relative;
@@ -243,8 +279,32 @@ footer {
     line-height: 50px;
 }
 
-/*----- 6. HELPERS -----*/
+/*-------------------------------------------------------------- 6. HELPERS ---------------------------------------*/
 
 .hidden {
     display: none;
+}
+
+
+
+
+
+
+/*----------------------------------------------------- 7. MEDIA QUERIES (web) ---------------------------------------*/
+
+
+@media screen and (min-width: 850px) {
+
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .medarbejdere {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .hvemervi .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

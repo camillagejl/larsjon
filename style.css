@@ -6,6 +6,14 @@
 /*2.2 NAV*/
 
 /*3. HEADER*/
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    z-index: -1;
+}
 
 /*4. MAIN*/
 /*4.1 SECTION*/
@@ -22,7 +30,7 @@
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-design-color: #020c2e;
-    --main-background-color: #fcfcfc;
+    --main-background-color: rgba(252, 252, 252, 0.8);
     --main-padding: 10px; /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
 }
 
@@ -122,6 +130,8 @@ header {
 }
 
 .header_arrow {
+    position: absolute;
+    top: 105vh;
     width: auto; /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
 }
 

@@ -1,30 +1,40 @@
 /* Indholdsfortegnelse: */
 
 
+/*
 
-/*1. GENERAL*/
-/*1.1 TEXT*/
-
-/*2. NAVIGATION*/
-/*2.1 BURGER MENU*/
-/*2.2 NAV*/
-
-/*3. HEADER*/
-
-/*4. MAIN*/
-/*4.1 SECTION*/
-/*4.2 SUB-SECTION*/
-/*4.3 GALLERY*/
-/*4.4 WEBSHOP*/
-
-/*5. FOOTER*/
-
-/*6. HELPERS*/
-
-/*7. MEDIA QUERIES */
+ 1. GENERAL
+     1.1 TEXT
 
 
+ 2. NAVIGATION
+     2.1 BURGER MENU
+     2.2 NAV
 
+
+ 3. HEADER
+
+
+ 4. MAIN
+     4.1 SECTION
+         4.1.1 HVEM ER VI?
+     4.2 SUB-SECTION
+         4.2.1 MEDARBEJDERE
+     4.3 GALLERY
+     4.4 WEBSHOP
+
+
+ 5. FOOTER
+
+
+ 6. HELPERS
+
+
+ 7.MEDIA QUERIES
+
+
+
+*/
 
 
 
@@ -202,7 +212,7 @@ section:nth-of-type(odd) .content {
     margin-bottom: 10px;
 }
 
-/*------------------ HVEM ER VI? --------------------*/
+/*------------------  4.1.1 HVEM ER VI? --------------------*/
 .hvemervi .content {
     display: grid;
     grid-template-columns: 1fr;
@@ -228,7 +238,7 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*-------------------- MEDARBEJDERE -------------------*/
+/*-------------------- 4.2.1 MEDARBEJDERE -------------------*/
 .medarbejdere {
     display: grid;
     grid-template-columns: 1fr;

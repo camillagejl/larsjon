@@ -145,11 +145,18 @@ header {
 }
 
 /*Logo i toppen af mobil-versionen*/
+/*
 .mobile_logo {
     max-width: 100%;
     margin-top: 17vh;
     height: 100vh;
-    /*Får logoet ned under burger-menuen*/
+    Får logoet ned under burger-menuen
+}
+*/
+
+.mobile_logo img {
+    width: 100%;
+    margin-bottom: 65vw;
 }
 
 .header_arrow {
@@ -162,6 +169,7 @@ header {
 #myVideo {
     position: absolute;
     bottom: 20vw;
+    /*den er sat til 100% fordi man skal kunne se hele videoen, og ikke hvor den er zoomet ind*/
     width: 100%;
     /*
     min-width: 100%;
@@ -246,8 +254,6 @@ section:nth-of-type(odd) .content {
     display: grid;
     grid-template-columns: 1fr;
 }
-
-
 
 /*--------------------------------------------------------- 4.3 GALLERY -----------------------------------------*/
 
@@ -381,6 +387,37 @@ footer {
     display: none;
 }
 
+
+
+/*----------------------------------------------------- 7. MEDIA QUERIES (tablet) ---------------------------------------*/
+
+/*LOGO inden loop video*/
+@media screen and (min-width: 555px) {
+    .mobile_logo img {
+        width: 85%;
+        margin-top: 5vh;
+        margin-left: 4vw;
+    }
+
+    #myVideo {
+        bottom: 16vw;
+
+    }
+}
+
+@media screen and (min-width: 605px) {
+    .mobile_logo img {
+        width: 85%;
+        margin-top: 8vh;
+        margin-left: 4vw;
+    }
+
+    #myVideo {
+        bottom: 11vw;
+
+    }
+
+}
 
 
 

@@ -146,8 +146,8 @@ header {
 
 /*Logo i toppen af mobil-versionen*/
 .mobile_logo {
-    max-width: 70%;
-    margin-top: 7vh;
+    max-width: 100%;
+    margin-top: 17vh;
     height: 100vh;
     /*Får logoet ned under burger-menuen*/
 }

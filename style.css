@@ -124,9 +124,12 @@ nav ul {
     /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
     list-style: none;
     /*Fjerner standard list-styling (dvs. bullets)*/
-    margin: 0;
+    margin-top: 100px;
 }
+nav ul li{
 
+    margin: 20px;
+}
 nav a {
     color: white;
     text-decoration: none;
@@ -358,7 +361,7 @@ footer {
 }
 
 .mobile_hidden img {
-    margin-bottom: 100px;
+    margin-top: 200px;
 }
 
 

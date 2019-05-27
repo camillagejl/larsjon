@@ -16,10 +16,10 @@ document.querySelector(".burger_menu").addEventListener("click", function () {
         let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
         let jsonData = await fetch(pagesUrl);
         section = await jsonData.json();
-        designHvemErVi();
+        insertHvemErVi();
     }
 
-    function designHvemErVi() {
+    function insertHvemErVi() {
         section.forEach(section => {
             let template =
                 `
@@ -44,18 +44,18 @@ document.querySelector(".burger_menu").addEventListener("click", function () {
     getHvemErVi();
 
 
-// ----- MEDARBEJDERE -----
+// ----- VORES TEAM -----
 
-    destMedarbejdere = document.querySelector("#medarbejdere");
-    async function getMedarbejdere() {
-        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/medarbejdere?per_page=100";
+    destVoresTeam = document.querySelector("#vores_team");
+    async function getVoresTeam() {
+        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/vores_team?per_page=100";
         let jsonData = await fetch(pagesUrl);
         section = await jsonData.json();
-        designMedarbejdere();
+        insertVoresTeam();
     }
 
-    function designMedarbejdere() {
-        console.log("Jeg sætter HTML ind i medarbejdere");
+    function insertVoresTeam() {
+        console.log("Jeg sætter HTML ind i vores_team");
         section.forEach(section => {
             let template =
                 `
@@ -73,11 +73,11 @@ document.querySelector(".burger_menu").addEventListener("click", function () {
                         </div>
                     </div>
 `;
-            destMedarbejdere.insertAdjacentHTML("beforeend", template);
+            destVoresTeam.insertAdjacentHTML("beforeend", template);
         });
     }
 
-    getMedarbejdere();
+    getVoresTeam();
 
     }
 

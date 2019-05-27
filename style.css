@@ -43,7 +43,7 @@
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-design-color: #020c2e;
-    --main-background-color: rgba(252, 252, 252, 0.8);
+    --main-background-color: rgb(252, 252, 252);
     --main-padding: 10px;
     /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
 }

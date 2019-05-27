@@ -381,6 +381,10 @@ footer {
     display: none;
 }
 
+.mobile_hidden {
+    display: none;
+}
+
 
 
 /*----------------------------------------------------- 7. MEDIA QUERIES (tablet) ---------------------------------------*/
@@ -435,10 +439,6 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .burger_menu {
-        display: none;
-    }
-
     .slideshow-container {
         display: none;
     }
@@ -447,5 +447,37 @@ footer {
 @media screen and (max-width: 850px) {
     .gallery {
         display: none;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .burger_menu {
+        display: none;
+    }
+
+    .mobile_hidden {
+        display: flex;
+    }
+
+    nav {
+        width: 300px;
+        padding: 0 25px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    section:nth-of-type(odd) .content {
+        flex-direction: row-reverse;
+    }
+
+    main {
+        padding-left: 200px;
+        margin: 5vh auto;
+        max-width: 1300px;
+
     }
 }

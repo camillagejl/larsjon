@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", start);
 function start() {
 
 document.querySelector(".burger_menu").addEventListener("click", function () {
-    document.querySelector("nav").classList.toggle("hidden");
+    document.querySelector("nav").classList.toggle("mobile_hidden");
     document.querySelector("header").classList.toggle("hidden");
     document.querySelector("main").classList.toggle("hidden");
 });

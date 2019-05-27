@@ -1,18 +1,85 @@
 document.addEventListener("DOMContentLoaded", start);
 
-
 function start() {
 
 document.querySelector(".burger_menu").addEventListener("click", function () {
-    console.log("Hej med dig");
     document.querySelector("nav").classList.toggle("hidden");
-
     document.querySelector("header").classList.toggle("hidden");
     document.querySelector("main").classList.toggle("hidden");
-
-
 });
-}
+
+
+// ----- HVEM ER VI? -----
+
+    destHvemErVi = document.querySelector("#hvemervi");
+    async function getHvemErVi() {
+        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
+        let jsonData = await fetch(pagesUrl);
+        section = await jsonData.json();
+        designHvemErVi();
+    }
+
+    function designHvemErVi() {
+        section.forEach(section => {
+            let template =
+                `
+            <section>
+                <div class="content">
+                    <div class="image_content">
+                        <img src="${section.billede.guid}">
+                    </div>
+                    <div class="text_content">
+                        <h2>${section.overskrift}</h2>
+                        <p>
+                            ${section.indhold}
+                        </p>
+                    </div>
+                </div>
+            </section>
+`;
+            destHvemErVi.insertAdjacentHTML("beforeend", template);
+        });
+    }
+
+    getHvemErVi();
+
+
+// ----- MEDARBEJDERE -----
+
+    destMedarbejdere = document.querySelector("#medarbejdere");
+    async function getMedarbejdere() {
+        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/medarbejdere?per_page=100";
+        let jsonData = await fetch(pagesUrl);
+        section = await jsonData.json();
+        designMedarbejdere();
+    }
+
+    function designMedarbejdere() {
+        console.log("Jeg sætter HTML ind i medarbejdere");
+        section.forEach(section => {
+            let template =
+                `
+            <div class="sub_section">
+                        <div class="image_content">
+                            <img src="${section.billede.guid}">
+                        </div>
+                        <div class="text_content">
+                            <h3>${section.navn}</h3>
+                            <h4>${section.stilling}</h4>
+                            <p>
+                                ${section.indhold}
+                            </p>
+
+                        </div>
+                    </div>
+`;
+            destMedarbejdere.insertAdjacentHTML("beforeend", template);
+        });
+    }
+
+    getMedarbejdere();
+
+    }
 
 /*************** Slideshow ****************/
 

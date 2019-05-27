@@ -223,12 +223,6 @@ section:nth-of-type(odd) .content {
     margin-bottom: 10px;
 }
 
-/*------------------  4.1.1 HVEM ER VI? --------------------*/
-.hvemervi .content {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 
 /*--------------------------------------------------------- 4.2 SUB-SECTION -------------------------------------*/
 
@@ -440,25 +434,18 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-}
-
-@media screen and (min-width: 850px) {
 
     .burger_menu {
+        display: none;
+    }
+
+    .slideshow-container {
         display: none;
     }
 }
 
 @media screen and (max-width: 850px) {
-
     .gallery {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 850px) {
-
-    .slideshow-container {
         display: none;
     }
 }

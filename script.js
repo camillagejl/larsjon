@@ -80,34 +80,55 @@ document.querySelector(".burger_menu").addEventListener("click", function () {
     getVoresTeam();
 
     }
+/*************** Firma og events ****************/
+
+destFirma_events = document.querySelector("#firma_events");
+    async function getFirma_events() {
+        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/firma_events?per_page=100";
+        let jsonData = await fetch(pagesUrl);
+        section = await jsonData.json();
+        insertFirma_events();
+    }
+
+    function insertFirma_events() {
+        console.log("Jeg sætter HTML ind i Firma_events");
+        section.forEach(section => {
+            let template =
+                `
+           <div class="sub_section">
+                        <div class="image_content">
+                            <img src="${section.billede.guid}">
+                        </div>
+                        <div class="text_content">
+                            <h2>${section.overskrift}</h2>
+                            <p>
+                                ${section.indhold}
+                            </p>
+
+                        </div>
+                    </div>
+`;
+            destFirma_events.insertAdjacentHTML("beforeend", template);
+        });
+    }
+
+    getFirma_events();
+
+
 
 /*************** Slideshow ****************/
+var slideIndex = 0;
+showSlides();
 
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+

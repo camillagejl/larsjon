@@ -58,6 +58,10 @@ img {
     /*Gør at billeder passer ind i div'er i stedet for at vises i fuld størrelse*/
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /*-------------------------------------------------------- 1.1 TEXT ---------------------------------------*/
 
@@ -126,10 +130,12 @@ nav ul {
     /*Fjerner standard list-styling (dvs. bullets)*/
     margin-top: 100px;
 }
-nav ul li{
+
+nav ul li {
 
     margin: 20px;
 }
+
 nav a {
     color: white;
     text-decoration: none;
@@ -440,6 +446,21 @@ footer {
     nav {
         width: 300px;
         padding: 0 25px;
+        position: sticky;
+        top: 0;
+    }
+
+    nav ul li a {
+        /*
+        display: block;
+        padding: 0.5rem 1rem;
+*/
+        color: white;
+        text-decoration: none;
+    }
+
+    nav ul li a.current {
+        background: #ff0000;
     }
 
     .content {

@@ -19,7 +19,7 @@ function start() {
     let cur = [];
 
     window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
+        let fromTop = window.scrollY + 250;
 
         mainNavLinks.forEach(link => {
             let section = document.querySelector(link.hash);
@@ -90,7 +90,7 @@ function insertVoresTeam() {
     section.forEach(section => {
         let template =
             `
-            <div class="sub_section content">
+            <div class="sub_section">
                         <div class="image_content">
                             <img src="${section.billede.guid}">
                         </div>
@@ -169,51 +169,80 @@ function insertGallery() {
 
             if (section.galleri_nummer == galleryNumber) {
 
-                    section.billeder.forEach(image => {
-                        galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
+                section.billeder.forEach(image => {
+                    galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
 
-                        let template =
-                            `
+                    let template =
+                        `
                             <div class="mySlides fade"><div class="numbertext"></div>
                             <img src="${image.guid}"></div>
 `;
-                        galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
-                        console.log("what is happening");
+                    galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
+                    console.log("what is happening");
 
-                    });
-                showSlides();
-
+                });
 
             }
         });
 
     });
+    showSlides();
 }
 
 getGallery();
 
 
-
-
 /*************** Slideshow ****************/
-var slideIndex = 0;
 
 function showSlides() {
+    document.querySelectorAll(".slideshow-container").forEach(function(slideshow) {
+        console.log("Starting slideshow", slideshow);
+        let i;
+        let slides = slideshow.getElementsByClassName("mySlides");
+        let currentSlide = 0;
 
-    document.querySelectorAll(".slideshow-container").forEach(slideshow => {
+        let nextSlide = function () {
+            console.log("Next slide ["+currentSlide+"]", slideshow);
+            // Hide all
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            // Next slide, and show that slide
+            currentSlide++;
+            if (currentSlide > slides.length) {
+                currentSlide = 1
+            }
+            slides[currentSlide - 1].style.display = "block";
 
-    console.log("Showing slideshow");
-    var i;
-    var slides = slideshow.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+            // Wait 2 sec before switching again
+            setTimeout(nextSlide, 2000);
+        };
 
+        if (slides.length === 0) {
+            console.log("No images loaded in slideshow", slideshow);
+        } else {
+            nextSlide();
+        }
     });
+
+
+
+
+
+    // document.querySelectorAll(".slideshow-container").forEach(slideshow => {
+    //
+    //     console.log("Showing slideshow");
+    //     var i;
+    //     var slides = slideshow.getElementsByClassName("mySlides");
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     slideIndex++;
+    //     if (slideIndex > slides.length) {
+    //         slideIndex = 1
+    //     }
+    //     slides[slideIndex - 1].style.display = "block";
+    //     setTimeout(showSlides, 2000); // Change image every 2 seconds
+    //
+    // });
 }

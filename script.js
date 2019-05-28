@@ -87,7 +87,6 @@ async function getVoresTeam() {
 }
 
 function insertVoresTeam() {
-    console.log("Jeg sætter HTML ind i vores_team");
     section.forEach(section => {
         let template =
             `
@@ -124,7 +123,6 @@ async function getFirma_events() {
 }
 
 function insertFirma_events() {
-    console.log("Jeg sætter HTML ind i Firma_events");
     section.forEach(section => {
         let template =
             `                   
@@ -151,7 +149,7 @@ getFirma_events();
 
 // ----- GALLERIER -----
 
-destGallery = document.querySelector(".gallery");
+destGallery = document.querySelectorAll(".gallery");
 
 async function getGallery() {
     let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/galleri?per_page=100";
@@ -161,11 +159,38 @@ async function getGallery() {
 }
 
 function insertGallery() {
-    section.forEach(section => {
-        section.billeder.forEach(image => {
-            destGallery.innerHTML += `<img src="${image.guid}">`;
-        })
+    destGallery.forEach(galleri => {
+        let galleryNumber = galleri.getAttribute("data-gallery-number");
+        console.log(galleryNumber);
+
+        section.forEach(section => {
+            console.log("galleryNumber: " + galleryNumber);
+            console.log("galleri_nummer: " + section.galleri_nummer);
+
+            if (section.galleri_nummer == galleryNumber) {
+                console.log("VICTORYYYYYYYYYYYYYYYYYYYYYY");
+
+
+                    section.billeder.forEach(image => {
+                        galleri.innerHTML += `<img src="${image.guid}">`;
+                    });
+
+
+
+            }
+
+
+        });
+
+
     });
+
+
+    // section.forEach(section => {
+    //     section.billeder.forEach(image => {
+    //         destGallery.innerHTML += `<img src="${image.guid}">`;
+    //     })
+    // });
 }
 
 getGallery();

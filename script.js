@@ -171,13 +171,52 @@ function insertGallery() {
                 console.log("VICTORYYYYYYYYYYYYYYYYYYYYYY");
 
 
+
                     section.billeder.forEach(image => {
                         galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
+
+
+                        let template =
+                            `
+                            <div class="mySlides fade"><div class="numbertext"></div>
+                            <img src="${image.guid}"></div>
+`;
+                        galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
+                        console.log("what is happening");
+
+
+
+
+
+                    //     galleri.querySelectorAll(".slideshow-container img").forEach(slide => {
+                    //
+                    //
+                    //         let arrayNumber = slide.getAttribute("data-array-number");
+                    //         console.log("arrayNumber: " + arrayNumber);
+                    //
+                    //         let thisImage =
+                    //
+                    //     slide.src = `${image.guid}`;
+                    // })
+
+
+
                         // galleri.querySelector(".slideshow-container").innerHTML += `<div class="mySlides fade"><div class="numbertext"></div><img src="${image.guid}" style="width:100%"></div>`;
+
+
+//                         let template =
+//                             `
+// <!--                            <div class="mySlides fade"><div class="numbertext"></div>-->
+//                             <img src="${image.guid}"></div>
+// `;
+//                         galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
+//                         console.log("what is happening");
+
 
                     });
 
 
+                showSlides();
 
             }
 
@@ -215,9 +254,9 @@ getGallery();
 
 /*************** Slideshow ****************/
 var slideIndex = 0;
-showSlides();
 
 function showSlides() {
+    console.log("Showing slideshow");
     var i;
     var slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {

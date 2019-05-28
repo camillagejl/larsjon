@@ -168,13 +168,9 @@ function insertGallery() {
             console.log("galleri_nummer: " + section.galleri_nummer);
 
             if (section.galleri_nummer == galleryNumber) {
-                console.log("VICTORYYYYYYYYYYYYYYYYYYYYYY");
-
-
 
                     section.billeder.forEach(image => {
                         galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
-
 
                         let template =
                             `
@@ -184,67 +180,14 @@ function insertGallery() {
                         galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
                         console.log("what is happening");
 
-
-
-
-
-                    //     galleri.querySelectorAll(".slideshow-container img").forEach(slide => {
-                    //
-                    //
-                    //         let arrayNumber = slide.getAttribute("data-array-number");
-                    //         console.log("arrayNumber: " + arrayNumber);
-                    //
-                    //         let thisImage =
-                    //
-                    //     slide.src = `${image.guid}`;
-                    // })
-
-
-
-                        // galleri.querySelector(".slideshow-container").innerHTML += `<div class="mySlides fade"><div class="numbertext"></div><img src="${image.guid}" style="width:100%"></div>`;
-
-
-//                         let template =
-//                             `
-// <!--                            <div class="mySlides fade"><div class="numbertext"></div>-->
-//                             <img src="${image.guid}"></div>
-// `;
-//                         galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
-//                         console.log("what is happening");
-
-
                     });
-
-
                 showSlides();
 
+
             }
-
-
         });
 
-
     });
-
-
-
-//     <!--                <div class="mySlides fade">-->
-// <!--                    <div class="numbertext">1 / 3</div>-->
-//         <!--                    <img src="elements/placeholder_4.png" style="width:100%">-->
-//         <!--                </div>-->
-//
-//         <!--                <div class="mySlides fade">-->
-//         <!--                    <div class="numbertext">2 / 3</div>-->
-//         <!--                    <img src="elements/placeholder_3.png" style="width:100%">-->
-//         <!--                </div>-->
-//
-//         <!--                <div class="mySlides fade">-->
-//         <!--                    <div class="numbertext">3 / 3</div>-->
-//         <!--                    <img src="elements/placeholder_4.png" style="width:100%">-->
-//
-//         <!--                </div>-->
-
-
 }
 
 getGallery();
@@ -256,9 +199,12 @@ getGallery();
 var slideIndex = 0;
 
 function showSlides() {
+
+    document.querySelectorAll(".slideshow-container").forEach(slideshow => {
+
     console.log("Showing slideshow");
     var i;
-    var slides = document.getElementsByClassName("mySlides");
+    var slides = slideshow.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -268,4 +214,6 @@ function showSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
+
+    });
 }

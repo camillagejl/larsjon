@@ -19,7 +19,7 @@ function start() {
     let cur = [];
 
     window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY + 250;
+        let fromTop = window.scrollY + 450;
 
         mainNavLinks.forEach(link => {
             let section = document.querySelector(link.hash);
@@ -147,6 +147,54 @@ function insertFirma_events() {
 getFirma_events();
 
 
+// ----- BLOMSTERSKOLEN -----
+
+destKurser = document.querySelector("#kurser");
+destForedrag = document.querySelector("#foredrag");
+
+async function getBlomsterskolen() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/blomsterskolen?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertBlomsterskolen();
+}
+
+function insertBlomsterskolen() {
+    section.forEach(section => {
+        let template =
+            `
+            <section>
+                <div class="content">
+                    <div class="image_content">
+                        <img src="${section.billede.guid}">
+                    </div>
+                    <div class="text_content">
+                        <h2>${section.overskrift}</h2>
+                        <p>
+                            ${section.indhold}
+                        </p>
+                    </div>
+                </div>
+            </section>
+`;
+
+        if (section.kategori[0] == "Kurser") {
+            console.log("hello");
+            destKurser.insertAdjacentHTML("beforeend", template);
+        }
+
+        if (section.kategori[0] == "Foredrag") {
+            console.log("hello");
+            destForedrag.insertAdjacentHTML("beforeend", template);
+        }
+    });
+}
+
+getBlomsterskolen();
+
+
+
+
 // ----- GALLERIER -----
 
 destGallery = document.querySelectorAll(".gallery");
@@ -161,12 +209,8 @@ async function getGallery() {
 function insertGallery() {
     destGallery.forEach(galleri => {
         let galleryNumber = galleri.getAttribute("data-gallery-number");
-        console.log(galleryNumber);
 
         section.forEach(section => {
-            console.log("galleryNumber: " + galleryNumber);
-            console.log("galleri_nummer: " + section.galleri_nummer);
-
             if (section.galleri_nummer == galleryNumber) {
 
                 section.billeder.forEach(image => {
@@ -178,7 +222,6 @@ function insertGallery() {
                             <img src="${image.guid}"></div>
 `;
                     galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
-                    console.log("what is happening");
 
                 });
 
@@ -196,13 +239,13 @@ getGallery();
 
 function showSlides() {
     document.querySelectorAll(".slideshow-container").forEach(function(slideshow) {
-        console.log("Starting slideshow", slideshow);
+        // console.log("Starting slideshow", slideshow);
         let i;
         let slides = slideshow.getElementsByClassName("mySlides");
         let currentSlide = 0;
 
         let nextSlide = function () {
-            console.log("Next slide ["+currentSlide+"]", slideshow);
+            // console.log("Next slide ["+currentSlide+"]", slideshow);
             // Hide all
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";

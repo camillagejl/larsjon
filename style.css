@@ -42,6 +42,7 @@
 
 :root {
     --main-body-font: 'Open Sans', sans-serif;
+    --main-heading-font: 'Montserrat', sans-serif;
     --main-design-color: #020c2e;
     --main-background-color: rgb(252, 252, 252);
     --main-padding: 10px;
@@ -67,6 +68,7 @@ html {
 
 html {
     font-family: var(--main-body-font);
+    color: var(--main-design-color);
 }
 
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
@@ -76,7 +78,14 @@ h2 {
     width: fit-content;
 }
 
-/*Gør at h1 har luft over- og under, og lige så meget padding i siderne som resten af siden*/
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--main-heading-font);
+}
+
+/*Gør at h1 har luft over- og under, og lige så meget padding i siderne som andet tekst*/
 h1 {
     margin: 10vh var(--main-padding);
 }
@@ -143,11 +152,12 @@ nav a {
 
 .menu_stroke {
     width: 10px;
-    display: none;
+    opacity: 0;
+    height: 100%;
 }
 
 nav ul li a.current .menu_stroke {
-    display: block;
+    opacity: 1;
 }
 
 

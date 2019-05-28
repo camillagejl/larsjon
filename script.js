@@ -13,7 +13,7 @@ function start() {
     //https://codemyui.com/sticky-sidebar-navigation-on-scroll/?fbclid=IwAR1BWZ7mLpb_EUsm7mUra_6SpXtGt5LDsqpUuPtFRa4HwJagNzSU0Po-vpU
 
     let mainNavLinks = document.querySelectorAll("nav ul li a");
-    let mainSections = document.querySelectorAll("main section");
+    // let mainSections = document.querySelectorAll("main section");
 
     let lastId;
     let cur = [];
@@ -36,20 +36,24 @@ function start() {
     });
 
 
-    // ----- HVEM ER VI? -----
+}
 
-    destHvemErVi = document.querySelector("#hvemervi");
-    async function getHvemErVi() {
-        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
-        let jsonData = await fetch(pagesUrl);
-        section = await jsonData.json();
-        insertHvemErVi();
-    }
 
-    function insertHvemErVi() {
-        section.forEach(section => {
-            let template =
-                `
+// ----- HVEM ER VI? -----
+
+destHvemErVi = document.querySelector("#hvemervi");
+
+async function getHvemErVi() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertHvemErVi();
+}
+
+function insertHvemErVi() {
+    section.forEach(section => {
+        let template =
+            `
             <section>
                 <div class="content">
                     <div class="image_content">
@@ -64,29 +68,30 @@ function start() {
                 </div>
             </section>
 `;
-            destHvemErVi.insertAdjacentHTML("beforeend", template);
-        });
-    }
+        destHvemErVi.insertAdjacentHTML("beforeend", template);
+    });
+}
 
-    getHvemErVi();
+getHvemErVi();
 
 
-    // ----- VORES TEAM -----
+// ----- VORES TEAM -----
 
-    destVoresTeam = document.querySelector("#vores_team");
-    async function getVoresTeam() {
-        let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/vores_team?per_page=100";
-        let jsonData = await fetch(pagesUrl);
-        section = await jsonData.json();
-        insertVoresTeam();
-    }
+destVoresTeam = document.querySelector(".vores_team_grid");
 
-    function insertVoresTeam() {
-        console.log("Jeg sætter HTML ind i vores_team");
-        section.forEach(section => {
-            let template =
-                `
-            <div class="sub_section">
+async function getVoresTeam() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/vores_team?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertVoresTeam();
+}
+
+function insertVoresTeam() {
+    console.log("Jeg sætter HTML ind i vores_team");
+    section.forEach(section => {
+        let template =
+            `
+            <div class="sub_section content">
                         <div class="image_content">
                             <img src="${section.billede.guid}">
                         </div>
@@ -100,16 +105,17 @@ function start() {
                         </div>
                     </div>
 `;
-            destVoresTeam.insertAdjacentHTML("beforeend", template);
-        });
-    }
-
-    getVoresTeam();
-
+        destVoresTeam.insertAdjacentHTML("beforeend", template);
+    });
 }
+
+getVoresTeam();
+
+
 /*************** Firma og events ****************/
 
 destFirma_events = document.querySelector("#firma_events");
+
 async function getFirma_events() {
     let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/firma_events?per_page=100";
     let jsonData = await fetch(pagesUrl);
@@ -121,25 +127,49 @@ function insertFirma_events() {
     console.log("Jeg sætter HTML ind i Firma_events");
     section.forEach(section => {
         let template =
-            `
-           <div class="sub_section">
-                        <div class="image_content">
-                            <img src="${section.billede.guid}">
-                        </div>
-                        <div class="text_content">
-                            <h2>${section.overskrift}</h2>
-                            <p>
-                                ${section.indhold}
-                            </p>
-
-                        </div>
+            `                   
+                <section>
+                <div class="content">
+                    <div class="image_content">
+                        <img src="${section.billede.guid}">
                     </div>
+                    <div class="text_content">
+                        <h2>${section.overskrift}</h2>
+                        <p>
+                            ${section.indhold}
+                        </p>
+                    </div>
+                </div>
+            </section>
 `;
         destFirma_events.insertAdjacentHTML("beforeend", template);
     });
 }
 
 getFirma_events();
+
+
+// ----- GALLERIER -----
+
+destGallery = document.querySelector(".gallery");
+
+async function getGallery() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/galleri?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertGallery();
+}
+
+function insertGallery() {
+    section.forEach(section => {
+        section.billeder.forEach(image => {
+            destGallery.innerHTML += `<img src="${image.guid}">`;
+        })
+    });
+}
+
+getGallery();
+
 
 
 

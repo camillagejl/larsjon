@@ -141,6 +141,15 @@ nav a {
     text-decoration: none;
 }
 
+.menu_stroke {
+    width: 10px;
+    display: none;
+}
+
+nav ul li a.current .menu_stroke {
+    display: block;
+}
+
 
 /*--------------------------------------------------------- 3. HEADER ---------------------------------------*/
 
@@ -170,9 +179,13 @@ header {
 
 .header_arrow {
     position: absolute;
-    top: 90vh;
+    top: 95vh;
     width: auto;
     /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
+}
+
+.header_arrow_white {
+    display: none;
 }
 
 #myVideo {
@@ -197,6 +210,7 @@ main {
 
 
 /*--------------------------------------------------------- 4.1 SECTION -------------------------------------*/
+/*Bruges til de generelle, "almindelige" sektioner, såsom Hvem er vi?, som skal skifte farve ved hveranden*/
 
 section {
     display: flex;
@@ -208,8 +222,6 @@ section {
     /*    padding: 50px 0;*/
     /*Sørger for, at der altid er noget white space omkring content-boksene*/
 }
-
-
 
 .content {
     padding: var(--main-padding);
@@ -234,6 +246,7 @@ section:nth-of-type(odd) .content {
 
 
 /*--------------------------------------------------------- 4.2 SUB-SECTION -------------------------------------*/
+/*Bruges til flere dele med indhold i én section, som ikke skal skifte baggrundsfarve, bl.a. Vores team*/
 
 .sub_section {
     margin-bottom: 150px;
@@ -251,12 +264,6 @@ section:nth-of-type(odd) .content {
     text-align: center;
 }
 
-
-/*-------------------- 4.2.1 MEDARBEJDERE -------------------*/
-.medarbejdere {
-    display: grid;
-    grid-template-columns: 1fr;
-}
 
 /*--------------------------------------------------------- 4.3 GALLERY -----------------------------------------*/
 
@@ -362,12 +369,12 @@ footer {
 }
 
 .mobile_hidden {
-    width: 150px;
     display: none;
 }
 
-.mobile_hidden img {
-    margin-top: 200px;
+.mobile_hidden .menu_logo {
+    width: 100%;
+    /*margin-top: 200px;*/
 }
 
 
@@ -407,6 +414,60 @@ footer {
 
 /*----------------------------------------------------- 7. MEDIA QUERIES (web) ---------------------------------------*/
 
+@media screen and (min-width: 767px) {
+
+    /*----- 3. HEADER -----*/
+
+    #myVideo {
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+    }
+
+    .mobile_logo {
+        display: none;
+    }
+
+    .header_arrow_white {
+        display: block;
+    }
+
+    .header_arrow_blue {
+        display: none;
+    }
+
+    header {
+        height: auto;
+    }
+
+
+/*----- 4. MAIN -----*/
+
+    main {
+        padding-left: 350px;
+        padding-right: 50px;
+        margin: 5vh auto;
+        max-width: 1300px;
+    }
+
+
+
+    .vores_team_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sub_section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div:nth-of-type(odd).sub_section {
+        flex-direction: row-reverse;
+    }
+}
+
 
 @media screen and (min-width: 850px) {
 
@@ -444,7 +505,7 @@ footer {
     }
 
     nav {
-        width: 300px;
+        width: 250px;
         padding: 0 25px;
         position: sticky;
         top: 0;
@@ -459,10 +520,6 @@ footer {
         text-decoration: none;
     }
 
-    nav ul li a.current {
-        background: #ff0000;
-    }
-
     .content {
         display: flex;
         flex-direction: row;
@@ -471,12 +528,5 @@ footer {
 
     section:nth-of-type(odd) .content {
         flex-direction: row-reverse;
-    }
-
-    main {
-        padding-left: 200px;
-        margin: 5vh auto;
-        max-width: 1300px;
-
     }
 }

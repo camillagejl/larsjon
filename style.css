@@ -267,16 +267,12 @@ section:nth-of-type(odd) .content {
 
 /*--------------------------------------------------------- 4.3 GALLERY -----------------------------------------*/
 
-.gallery {
+.desktop_gallery {
     display: grid;
     min-height: 100vh;
     align-items: center;
     padding: var(--main-padding);
     grid-template-columns: 1fr;
-}
-
-.gallery img {
-    background-color: lightsteelblue;
 }
 
 /* Slideshow container */
@@ -471,7 +467,7 @@ footer {
 
 @media screen and (min-width: 850px) {
 
-    .gallery {
+    .desktop_gallery {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -490,7 +486,7 @@ footer {
 }
 
 @media screen and (max-width: 850px) {
-    .gallery {
+    .desktop_gallery {
         display: none;
     }
 }

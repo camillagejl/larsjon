@@ -172,7 +172,9 @@ function insertGallery() {
 
 
                     section.billeder.forEach(image => {
-                        galleri.innerHTML += `<img src="${image.guid}">`;
+                        galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
+                        // galleri.querySelector(".slideshow-container").innerHTML += `<div class="mySlides fade"><div class="numbertext"></div><img src="${image.guid}" style="width:100%"></div>`;
+
                     });
 
 
@@ -186,11 +188,24 @@ function insertGallery() {
     });
 
 
-    // section.forEach(section => {
-    //     section.billeder.forEach(image => {
-    //         destGallery.innerHTML += `<img src="${image.guid}">`;
-    //     })
-    // });
+
+//     <!--                <div class="mySlides fade">-->
+// <!--                    <div class="numbertext">1 / 3</div>-->
+//         <!--                    <img src="elements/placeholder_4.png" style="width:100%">-->
+//         <!--                </div>-->
+//
+//         <!--                <div class="mySlides fade">-->
+//         <!--                    <div class="numbertext">2 / 3</div>-->
+//         <!--                    <img src="elements/placeholder_3.png" style="width:100%">-->
+//         <!--                </div>-->
+//
+//         <!--                <div class="mySlides fade">-->
+//         <!--                    <div class="numbertext">3 / 3</div>-->
+//         <!--                    <img src="elements/placeholder_4.png" style="width:100%">-->
+//
+//         <!--                </div>-->
+
+
 }
 
 getGallery();

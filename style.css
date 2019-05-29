@@ -284,7 +284,6 @@ section:nth-of-type(odd) .content {
 
 .bog {
     position: relative;
-    box-shadow: 5px 5px 15px #919191;
     line-height: 0;
     overflow: hidden;
 }
@@ -295,8 +294,8 @@ section:nth-of-type(odd) .content {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #5f6f83;
-    color: white;
+    background: #F3F3F3;
+    color: var(--main-design-color);
     transition: all 0.3s ease-out;
     display: flex;
     flex-direction: column;
@@ -323,7 +322,6 @@ section:nth-of-type(odd) .content {
 }
 
 .bog__release {
-    color: white;
     padding: 20px;
     border: none;
 }

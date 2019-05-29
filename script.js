@@ -12,7 +12,7 @@ function start() {
 
     function is_touch_device() {
         var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
-        var mq = function(query) {
+        var mq = function (query) {
             return window.matchMedia(query).matches;
         }
 
@@ -251,7 +251,6 @@ function insertKurser() {
 getKurser();
 
 
-
 // ----- BØGER -----
 
 destBoeger = document.querySelector("#boeger .grid-3");
@@ -272,9 +271,7 @@ function insertBoeger() {
                     <div class="bog__details">
                         <div class="bog__title">${section.titel}</div>
                         <div class="bog__release">${section.udgivelse}</div>
-                        <div class="bog__p">
-                        ${section.indhold}
-                        </div>
+                        <div class="bog__p">${section.indhold}</div>
                     </div>
                 </div>
 `;
@@ -284,6 +281,30 @@ function insertBoeger() {
 }
 
 getBoeger();
+
+
+// ----- Find & Kontakt -----
+
+destKontakt = document.querySelector("#find_kontakt");
+
+async function getKontakt() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/kontakt/111";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertKontakt();
+}
+
+function insertKontakt() {
+    destKontakt.querySelector("#adresse_overskrift").textContent = `${section.adresse_overskrift}`;
+    destKontakt.querySelector("#adresse").innerHTML = `${section.adresse}`;
+    // destKontakt.querySelector("#").textContent = `${section.}`;
+    // destKontakt.querySelector("#").textContent = `${section.}`;
+    // destKontakt.querySelector("#").textContent = `${section.}`;
+    // destKontakt.querySelector("#").textContent = `${section.}`;
+
+}
+
+getKontakt();
 
 
 // ----- GALLERIER -----

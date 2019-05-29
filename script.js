@@ -149,7 +149,7 @@ getFirma_events();
 
 // ----- BLOMSTERSKOLEN -----
 
-destKurser = document.querySelector("#kurser");
+destKurser = document.querySelector("#kurser_info");
 destForedrag = document.querySelector("#foredrag");
 
 async function getBlomsterskolen() {
@@ -179,12 +179,10 @@ function insertBlomsterskolen() {
 `;
 
         if (section.kategori[0] == "Kurser") {
-            console.log("hello");
             destKurser.insertAdjacentHTML("beforeend", template);
         }
 
         if (section.kategori[0] == "Foredrag") {
-            console.log("hello");
             destForedrag.insertAdjacentHTML("beforeend", template);
         }
     });
@@ -192,6 +190,40 @@ function insertBlomsterskolen() {
 
 getBlomsterskolen();
 
+
+// ----- KURSER -----
+
+destKurserSection = document.querySelector("#kurser");
+
+async function getKurser() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/kurser?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertKurser();
+}
+
+function insertKurser() {
+    section.forEach(section => {
+        let template =
+            `
+                <div class="content_column">
+                    <div class="image_content">
+                        <img src="${section.billede.guid}">
+                    </div>
+                    <div class="text_content">
+                        <h2>${section.overskrift}</h2>
+                        <p>
+                            ${section.indhold}
+                        </p>
+                    </div>
+                </div>
+`;
+
+        destKurserSection.insertAdjacentHTML("beforeend", template);
+    });
+}
+
+getKurser();
 
 
 
@@ -238,7 +270,7 @@ getGallery();
 /*************** Slideshow ****************/
 
 function showSlides() {
-    document.querySelectorAll(".slideshow-container").forEach(function(slideshow) {
+    document.querySelectorAll(".slideshow-container").forEach(function (slideshow) {
         // console.log("Starting slideshow", slideshow);
         let i;
         let slides = slideshow.getElementsByClassName("mySlides");
@@ -267,25 +299,4 @@ function showSlides() {
             nextSlide();
         }
     });
-
-
-
-
-
-    // document.querySelectorAll(".slideshow-container").forEach(slideshow => {
-    //
-    //     console.log("Showing slideshow");
-    //     var i;
-    //     var slides = slideshow.getElementsByClassName("mySlides");
-    //     for (i = 0; i < slides.length; i++) {
-    //         slides[i].style.display = "none";
-    //     }
-    //     slideIndex++;
-    //     if (slideIndex > slides.length) {
-    //         slideIndex = 1
-    //     }
-    //     slides[slideIndex - 1].style.display = "block";
-    //     setTimeout(showSlides, 2000); // Change image every 2 seconds
-    //
-    // });
 }

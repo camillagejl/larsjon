@@ -71,6 +71,11 @@ html {
     color: var(--main-design-color);
 }
 
+a {
+    text-decoration: none;
+    color: orangered;
+}
+
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
 h1,
 h2 {
@@ -292,7 +297,6 @@ section:nth-of-type(odd) .content {
     position: relative;
     margin: auto;
     height: 300px;
-    background-color: pink;
 }
 
 /* Hide the images by default */
@@ -450,6 +454,8 @@ footer {
     }
 
 
+
+
 /*----- 4. MAIN -----*/
 
     main {
@@ -476,6 +482,12 @@ footer {
     div:nth-of-type(odd).sub_section {
         flex-direction: row-reverse;
     }
+
+    .bog .text_content {
+        display: none;
+    }
+
+
 }
 
 
@@ -534,6 +546,22 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     section:nth-of-type(odd) .content {

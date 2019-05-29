@@ -43,8 +43,8 @@
 :root {
     --main-body-font: 'Open Sans', sans-serif;
     --main-heading-font: 'Montserrat', sans-serif;
-    --main-design-color: #020c2e;
-    --main-background-color: rgb(252, 252, 252);
+    --main-design-color: #030c26;
+    --main-background-color: #FCFCFC;
     --main-padding: 10px;
     /*Variabel, så vi kan tilføje mere eller mindre padding til alle elementer på siden*/
 }
@@ -72,8 +72,8 @@ html {
 }
 
 a {
-    text-decoration: none;
-    color: orangered;
+    /*text-decoration: none;*/
+    color: #b46d3a;
 }
 
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
@@ -280,7 +280,80 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*--------------------------------------------------------- 4.3 GALLERY -----------------------------------------*/
+/*--------------------------------------------------------- 4.4 BØGER -----------------------------------------*/
+
+.bog {
+    position: relative;
+    box-shadow: 5px 5px 15px #919191;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.bog__details {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #5f6f83;
+    color: white;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.is_not_touch_device .bog__details {
+    margin-top: 315px;
+}
+
+.is_not_touch_device .bog:hover .bog__details {
+    margin-top: 0;
+    height: 60%;
+    padding: 20% 0;
+}
+
+.bog__title {
+    margin: 20px 0;
+}
+
+.bog__p {
+    line-height: 30px;
+    margin: 0 5px;
+}
+
+.bog__release {
+    color: white;
+    padding: 20px;
+    border: none;
+}
+
+
+/*-------- PORTFOLIO THUMBS FOR TOUCH --------*/
+
+.is_touch_device .bog__details {
+    margin-top: 260px;
+}
+
+.is_touch_device .bog__title {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.is_touch_device .bog__release {
+    color: white;
+    padding: 20px;
+    border: none;
+    font-size: 1.5rem;
+    margin: 5px 0 50px 0;
+}
+
+.is_touch_device .bog__p {
+    display: none;
+}
+
+
+/*--------------------------------------------------------- 4.4 GALLERY -----------------------------------------*/
 
 .desktop_gallery {
     display: grid;

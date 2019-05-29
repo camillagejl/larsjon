@@ -2,6 +2,31 @@ document.addEventListener("DOMContentLoaded", start);
 
 function start() {
 
+
+    console.log('is touch:', is_touch_device());
+
+    document.querySelector('html').classList.remove('is_touch_device', 'is_not_touch_device');
+    document.querySelector('html').classList.add(
+        is_touch_device() ? 'is_touch_device' : 'is_not_touch_device'
+    );
+
+    function is_touch_device() {
+        var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+        var mq = function(query) {
+            return window.matchMedia(query).matches;
+        }
+
+        if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+            return true;
+        }
+
+        // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+        // https://git.io/vznFH
+        var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+        return mq(query);
+    }
+
+
     document.querySelector(".burger_menu").addEventListener("click", function () {
         document.querySelector("nav").classList.toggle("mobile_hidden");
         document.querySelector("header").classList.toggle("hidden");
@@ -225,6 +250,40 @@ function insertKurser() {
 
 getKurser();
 
+
+
+// ----- BØGER -----
+
+destBoeger = document.querySelector("#boeger .grid-3");
+
+async function getBoeger() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/boeger?per_page=100";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertBoeger();
+}
+
+function insertBoeger() {
+    section.forEach(section => {
+        let template =
+            `
+<div class="bog">
+                        <img src="${section.billede.guid}">
+                    <div class="bog__details">
+                        <div class="bog__title">${section.titel}</div>
+                        <div class="bog__release">${section.udgivelse}</div>
+                        <div class="bog__p">
+                        ${section.indhold}
+                        </div>
+                    </div>
+                </div>
+`;
+
+        destBoeger.insertAdjacentHTML("beforeend", template);
+    });
+}
+
+getBoeger();
 
 
 // ----- GALLERIER -----

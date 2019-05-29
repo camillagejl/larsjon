@@ -283,6 +283,7 @@ section:nth-of-type(odd) .content {
     align-items: center;
     padding: var(--main-padding);
     grid-template-columns: 1fr;
+    grid-column-gap: 5px;
 }
 
 /* Slideshow container */
@@ -382,7 +383,7 @@ footer {
 
 .mobile_hidden .menu_logo {
     width: 100%;
-    /*margin-top: 200px;*/
+    margin-top: 100px;
 }
 
 
@@ -463,6 +464,7 @@ footer {
     .vores_team_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5px;
     }
 
     .sub_section {

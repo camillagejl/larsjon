@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", start);
 
 function start() {
-
-
     console.log('is touch:', is_touch_device());
 
+    // Tjekker, om enheden er touch eller har en mus, og tilføjer den tilsvarende klasse til "html". Denne klasse bruges
+    // bøgerne, for at vide, om man kan hover over bøgerne eller ej.
     document.querySelector('html').classList.remove('is_touch_device', 'is_not_touch_device');
     document.querySelector('html').classList.add(
         is_touch_device() ? 'is_touch_device' : 'is_not_touch_device'
@@ -195,9 +195,7 @@ function insertBlomsterskolen() {
                     </div>
                     <div class="text_content">
                         <h2>${section.overskrift}</h2>
-                        <p>
                             ${section.indhold}
-                        </p>
                     </div>
                 </div>
             </section>
@@ -297,10 +295,14 @@ async function getKontakt() {
 function insertKontakt() {
     destKontakt.querySelector("#adresse_overskrift").textContent = `${section.adresse_overskrift}`;
     destKontakt.querySelector("#adresse").innerHTML = `${section.adresse}`;
-    // destKontakt.querySelector("#").textContent = `${section.}`;
-    // destKontakt.querySelector("#").textContent = `${section.}`;
-    // destKontakt.querySelector("#").textContent = `${section.}`;
-    // destKontakt.querySelector("#").textContent = `${section.}`;
+    destKontakt.querySelector("#aabningstider_overskrift").textContent = `${section.aabningstider_overskrift}`;
+    destKontakt.querySelector("#aabningstider").innerHTML = `${section.aabningstider}`;
+    destKontakt.querySelector("#kontakt_overskrift").textContent = `${section.kontakt_overskrift}`;
+    destKontakt.querySelector("#kontakt_tlf").innerHTML = `${section.kontakt_tlf}`;
+    destKontakt.querySelector("#kontakt_email").innerHTML = `${section.kontakt_email}`;
+    destKontakt.querySelector("#presse_overskrift").textContent = `${section.presse_overskrift}`;
+    destKontakt.querySelector("#presse_tlf").innerHTML = `${section.presse_tlf}`;
+    destKontakt.querySelector("#presse_email").innerHTML = `${section.presse_email}`;
 
 }
 

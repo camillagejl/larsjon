@@ -327,7 +327,8 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*-------- PORTFOLIO THUMBS FOR TOUCH --------*/
+/*-------- BØGER FOR TOUCH --------*/
+/*Skal meget til - en stor del skal nok slettes - da dette er taget fra et andet portfolio*/
 
 .is_touch_device .bog__details {
     margin-top: 260px;
@@ -441,6 +442,8 @@ footer {
     bottom: 0;
     left: 0;
     color: white;
+    border-top: 1px solid var(--main-background-color);
+    z-index: 100;
     background-color: var(--main-design-color);
     text-align: center;
     line-height: 50px;
@@ -625,11 +628,6 @@ footer {
         justify-content: center;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
     .grid-3 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -637,5 +635,10 @@ footer {
 
     section:nth-of-type(odd) .content {
         flex-direction: row-reverse;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

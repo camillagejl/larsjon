@@ -17,9 +17,10 @@
 
  4. MAIN
      4.1 SECTION
-         4.1.1 HVEM ER VI?
-     4.2 SUB-SECTION
-         4.2.1 MEDARBEJDERE
+     4.2 VORES TEAM
+     4.3 BØGER
+          4.3.1 BØGER - TOUCH DEVICES
+          4.3.2 BØGER - MOUSE DEVICES
      4.3 GALLERY
      4.4 WEBSHOP
 
@@ -92,7 +93,7 @@ h4 {
 
 /*Gør at h1 har luft over- og under, og lige så meget padding i siderne som andet tekst*/
 h1 {
-    margin: 10vh var(--main-padding);
+    margin: 5vh var(--main-padding);
 }
 
 
@@ -146,7 +147,6 @@ nav ul {
 }
 
 nav ul li {
-
     margin: 20px;
 }
 
@@ -155,14 +155,17 @@ nav a {
     text-decoration: none;
 }
 
+/*Stregen som ligger før det nuværende menupunkt*/
 .menu_stroke {
     width: 12px;
     opacity: 0;
     height: 100%;
-    margin-bottom: 3px;
+    margin-bottom: 6px;
     margin-right: 5px;
 }
 
+/*Sørger for, at menu_stroke er synlig på det nuværende menupunkt*/
+/*Her er brugt opacity i stedet for display: none, for at undgå, at ting hopper, når den vises*/
 nav ul li a.current .menu_stroke {
     opacity: 1;
 }
@@ -180,20 +183,14 @@ header {
 }
 
 /*Logo i toppen af mobil-versionen*/
-/*
 .mobile_logo {
     max-width: 100%;
     margin-top: 17vh;
+    /*Får logoet ned under burger-menuen*/
     height: 100vh;
-    Får logoet ned under burger-menuen
-}
-*/
-
-.mobile_logo img {
-    width: 100%;
-    margin-bottom: 65vw;
 }
 
+/*Styling for begge arrows i headeren - den blå til mobile og hvid til desktop*/
 .header_arrow {
     position: absolute;
     top: 95vh;
@@ -201,6 +198,7 @@ header {
     /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
 }
 
+/*Skjuler den hvide pil på mobile*/
 .header_arrow_white {
     display: none;
 }
@@ -220,24 +218,27 @@ header {
 .social_media_icons {
    position: absolute;
     display: flex;
-    flex-basis: 1;
+    /*flex-basis: 1;*/
     flex-direction: row;
-    top: 90vh;
+    top: auto;
+    bottom: 3vh;
+    height: 30px;
 }
+
 .facebook {
-    width: 15px;
+    height: 100%;
     margin-bottom: 2px;
     margin-right: 10px;
 }
 .instagram {
-    width: 30px;
+    height: 100%;
     margin-left: 10px;
 }
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
 main {
-    max-width: 1300px;
     /*Sætter max på, så vi har lidt styr på, hvordan det ser ud på en større skærm*/
+    max-width: 1300px;
 }
 
 
@@ -248,10 +249,10 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /*min-height sørger for, at hver section kan være på skærmen alene, uden man kan se de andre*/
     min-height: 100vh;
-    /*display: flex;*/
     align-items: center;
-    /*    padding: 50px 0;*/
+    padding: 50px 0;
     /*Sørger for, at der altid er noget white space omkring content-boksene*/
 }
 
@@ -268,12 +269,13 @@ section:nth-of-type(odd) .content {
 .image_content {
     flex: 1;
 }
-.image_content {
 
-    margin-right: 10px;
-    margin-top: 75px;
+.image_content {
+    /*margin-right: 10px;*/
+    /*margin-top: 75px;*/
 }
-/*Giver en streg 30px under p'er*/
+
+/*Giver en streg 20px under p'er, og giver 10px margin under stregen*/
 .text_content {
     padding-bottom: 20px;
     border-bottom: 2px solid var(--main-design-color);
@@ -281,35 +283,48 @@ section:nth-of-type(odd) .content {
 }
 
 
-/*--------------------------------------------------------- 4.2 SUB-SECTION -------------------------------------*/
-/*Bruges til flere dele med indhold i én section, som ikke skal skifte baggrundsfarve, bl.a. Vores team*/
+/*--------------------------------------------------------- 4.2 VORES TEAM -------------------------------------*/
+/*Bruges team Vores team, fordi alt skal være i én section (med samme baggrundsfarve) og have speciel margin og
+overskrifter*/
 
-.sub_section {
+.team_member {
     margin-bottom: 150px;
 }
 
 /*Sørger for, at den sidste medarbejder ikke har margin under sectionen*/
-.sub_section:last-child {
+.team_member:last-child {
     margin-bottom: 0;
 }
 
 /*Centrerer navnet og stillingen på medarbejderen, uden at centrere overskrifterne på resten af siden*/
-.sub_section h3,
-.sub_section h4 {
+.team_member h3,
+.team_member h4 {
     width: 100%;
     text-align: center;
 }
 
 
-/*--------------------------------------------------------- 4.4 BØGER -----------------------------------------*/
+/*--------------------------------------------------------- 4.3 BØGER -----------------------------------------*/
 
 .bog {
     position: relative;
-    line-height: 0;
+    /*Sørger for at alt der løber uden for div'en - dvs. uden for billedet - ikke kan ses*/
     overflow: hidden;
 }
 
-.bog__details {
+
+/*-------- 4.3.1 --------*/
+/*Skal meget til - en stor del skal nok slettes - da dette er taget fra et andet portfolio*/
+
+.is_touch_device .bog__details {
+    /*margin-top: 260px;*/
+}
+
+
+/*----- 4.3.2 BØGER - MOUSE DEVICES -----*/
+
+/*Placerer boksen med tekst oven på billedet*/
+.is_not_touch_device .bog__details {
     position: absolute;
     top: 0;
     right: 0;
@@ -323,53 +338,16 @@ section:nth-of-type(odd) .content {
     justify-content: space-between;
 }
 
+/*På desktop - placerer tekst-boksen 90% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
 .is_not_touch_device .bog__details {
-    margin-top: 315px;
+    top: 90%;
+    border: 0;
+    margin: 0;
 }
 
+/*Sender tekst-boksen op til toppen, når man holder musen over nøgerme*/
 .is_not_touch_device .bog:hover .bog__details {
-    margin-top: 0;
-    height: 60%;
-    padding: 20% 0;
-}
-
-.bog__title {
-    margin: 20px 0;
-}
-
-.bog__p {
-    line-height: 30px;
-    margin: 0 5px;
-}
-
-.bog__release {
-    padding: 20px;
-    border: none;
-}
-
-
-/*-------- BØGER FOR TOUCH --------*/
-/*Skal meget til - en stor del skal nok slettes - da dette er taget fra et andet portfolio*/
-
-.is_touch_device .bog__details {
-    margin-top: 260px;
-}
-
-.is_touch_device .bog__title {
-    font-size: 1.5rem;
-    margin: 20px 0;
-}
-
-.is_touch_device .bog__release {
-    color: white;
-    padding: 20px;
-    border: none;
-    font-size: 1.5rem;
-    margin: 5px 0 50px 0;
-}
-
-.is_touch_device .bog__p {
-    display: none;
+    top: 0;
 }
 
 
@@ -562,26 +540,20 @@ footer {
         max-width: 1300px;
     }
 
-
-
     .vores_team_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 5px;
     }
 
-    .sub_section {
+    .team_member {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    div:nth-of-type(odd).sub_section {
+    div:nth-of-type(odd).team_member {
         flex-direction: row-reverse;
-    }
-
-    .bog .text_content {
-        display: none;
     }
 
 

@@ -115,7 +115,7 @@ function insertVoresTeam() {
     section.forEach(section => {
         let template =
             `
-            <div class="sub_section">
+            <div class="team_member">
                         <div class="image_content">
                             <img src="${section.billede.guid}">
                         </div>
@@ -265,11 +265,11 @@ function insertBoeger() {
         let template =
             `
 <div class="bog">
-                        <img src="${section.billede.guid}">
-                    <div class="bog__details">
-                        <div class="bog__title">${section.titel}</div>
-                        <div class="bog__release">${section.udgivelse}</div>
-                        <div class="bog__p">${section.indhold}</div>
+                    <img src="${section.billede.guid}">
+                    <div class="bog__details text_content">
+                        <h3>${section.titel}</h3>
+                        <h4>${section.udgivelse}</h4>
+                        <p>${section.indhold}</p>
                     </div>
                 </div>
 `;

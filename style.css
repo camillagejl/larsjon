@@ -212,7 +212,7 @@ header {
 }
 
 .social_media_icons {
-   position: absolute;
+    position: absolute;
     display: flex;
     /*flex-basis: 1;*/
     flex-direction: row;
@@ -226,10 +226,12 @@ header {
     margin-bottom: 2px;
     margin-right: 10px;
 }
+
 .instagram {
     height: 100%;
     margin-left: 10px;
 }
+
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
 main {
@@ -237,6 +239,26 @@ main {
     max-width: 1300px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #F3F3F3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-design-color);
+}
 
 /*--------------------------------------------------------- 4.1 SECTION -------------------------------------*/
 /*Bruges til de generelle, "almindelige" sektioner, såsom Hvem er vi?, som skal skifte farve ved hveranden*/
@@ -267,8 +289,8 @@ section:nth-of-type(odd) .content {
 }
 
 .image_content {
-    /*margin-right: 10px;*/
-    /*margin-top: 75px;*/
+    margin-right: 10px;
+    margin-top: 75px;
 }
 
 /*Giver en streg 20px under p'er, og giver 10px margin under stregen*/
@@ -383,6 +405,7 @@ overskrifter*/
     from {
         opacity: .4
     }
+
     to {
         opacity: 1
     }
@@ -392,6 +415,7 @@ overskrifter*/
     from {
         opacity: .4
     }
+
     to {
         opacity: 1
     }
@@ -486,6 +510,7 @@ footer {
 
 /*----------------------------------------------------- 7. MEDIA QUERIES (web) ---------------------------------------*/
 
+
 @media screen and (min-width: 767px) {
 
     /*----- 3. HEADER -----*/
@@ -515,7 +540,7 @@ footer {
 
 
 
-/*----- 4. MAIN -----*/
+    /*----- 4. MAIN -----*/
 
     main {
         padding-left: 350px;
@@ -530,6 +555,10 @@ footer {
         grid-column-gap: 5px;
     }
 
+    .team_member .text_content {
+        border: none;
+    }
+
     .team_member {
         display: flex;
         flex-direction: row;
@@ -541,8 +570,25 @@ footer {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .team_member .text_content {
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--main-design-color);
+        margin-bottom: 10px;
+    }
 
+}
+@media screen and (min-width: 400px) {
+       .header_arrow {
+        position: absolute;
+        top: 95vh;
+        left: 60vw;
+        width: auto;
+
+    }
+}
 @media screen and (min-width: 850px) {
+
 
     .desktop_gallery {
         grid-template-columns: 1fr 1fr 1fr;
@@ -618,5 +664,25 @@ footer {
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mobile_hidden {
+        width: 180px;
+    }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+    .team_member {
+        margin-bottom: 10px;
+
+    }
+
+    .team_member img {
+        margin-top: 25px;
+
     }
 }

@@ -142,7 +142,7 @@ nav ul {
     /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
     list-style: none;
     /*Fjerner standard list-styling (dvs. bullets)*/
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 nav ul li {
@@ -156,9 +156,11 @@ nav a {
 }
 
 .menu_stroke {
-    width: 10px;
+    width: 12px;
     opacity: 0;
     height: 100%;
+    margin-bottom: 3px;
+    margin-right: 5px;
 }
 
 nav ul li a.current .menu_stroke {
@@ -215,7 +217,22 @@ header {
     z-index: -1;
 }
 
-
+.social_media_icons {
+   position: absolute;
+    display: flex;
+    flex-basis: 1;
+    flex-direction: row;
+    top: 90vh;
+}
+.facebook {
+    width: 15px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+}
+.instagram {
+    width: 30px;
+    margin-left: 10px;
+}
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
 main {
@@ -251,7 +268,11 @@ section:nth-of-type(odd) .content {
 .image_content {
     flex: 1;
 }
+.image_content {
 
+    margin-right: 10px;
+    margin-top: 75px;
+}
 /*Giver en streg 30px under p'er*/
 .text_content {
     padding-bottom: 20px;
@@ -457,11 +478,13 @@ footer {
 
 .mobile_hidden {
     display: none;
+    z-index: 101;
 }
 
 .mobile_hidden .menu_logo {
-    width: 100%;
-    margin-top: 100px;
+    width: 80%;
+    margin-top: 200px;
+    margin-left: 20px;
 }
 
 
@@ -631,6 +654,7 @@ footer {
     .grid-3 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
     }
 
     section:nth-of-type(odd) .content {

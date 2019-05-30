@@ -332,7 +332,8 @@ function insertGallery() {
 
                     let template =
                         `
-                            <div class="mySlides fade"><div class="numbertext"></div>
+                            <div class="mySlides fade">
+<!--                            <div class="numbertext"></div>-->
                             <img src="${image.guid}"></div>
 `;
                     galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);

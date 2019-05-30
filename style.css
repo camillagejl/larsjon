@@ -18,10 +18,8 @@
  4. MAIN
      4.1 SECTION
      4.2 VORES TEAM
-     4.3 BØGER
-          4.3.1 BØGER - TOUCH DEVICES
-          4.3.2 BØGER - MOUSE DEVICES
-     4.3 GALLERY
+     4.3 BØGER FOR MOUSE DEVICES
+     4.4 GALLERY
      4.4 WEBSHOP
 
 
@@ -32,8 +30,6 @@
 
 
  7.MEDIA QUERIES
-
-
 
 */
 
@@ -304,24 +300,14 @@ overskrifter*/
 }
 
 
-/*--------------------------------------------------------- 4.3 BØGER -----------------------------------------*/
+/*--------------------------------------------------------- 4.3 BØGER FOR MOUSE DEVICES -----------------------------------------*/
+/*På telefonen følger bøger (vidst nok!) den generelle styling på siden, men på desktop har vi hover-funktionen*/
 
 .bog {
     position: relative;
     /*Sørger for at alt der løber uden for div'en - dvs. uden for billedet - ikke kan ses*/
     overflow: hidden;
 }
-
-
-/*-------- 4.3.1 --------*/
-/*Skal meget til - en stor del skal nok slettes - da dette er taget fra et andet portfolio*/
-
-.is_touch_device .bog__details {
-    /*margin-top: 260px;*/
-}
-
-
-/*----- 4.3.2 BØGER - MOUSE DEVICES -----*/
 
 /*Placerer boksen med tekst oven på billedet*/
 .is_not_touch_device .bog__details {
@@ -338,14 +324,14 @@ overskrifter*/
     justify-content: space-between;
 }
 
-/*På desktop - placerer tekst-boksen 90% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
+/*Placerer tekst-boksen 90% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
 .is_not_touch_device .bog__details {
     top: 90%;
     border: 0;
     margin: 0;
 }
 
-/*Sender tekst-boksen op til toppen, når man holder musen over nøgerme*/
+/*Sender tekst-boksen op til toppen, når man holder musen over bøgerne*/
 .is_not_touch_device .bog:hover .bog__details {
     top: 0;
 }
@@ -362,7 +348,7 @@ overskrifter*/
     grid-column-gap: 5px;
 }
 
-/* Slideshow container */
+/* Slideshow container til mobilen*/
 .slideshow-container {
     width: 100%;
     position: relative;
@@ -376,14 +362,14 @@ overskrifter*/
 }
 
 
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 20px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
+/*!* Number text (1/3 etc) *!*/
+/*.numbertext {*/
+/*    color: #f2f2f2;*/
+/*    font-size: 20px;*/
+/*    padding: 8px 12px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*}*/
 
 /* Fading animation */
 .fade {
@@ -397,7 +383,6 @@ overskrifter*/
     from {
         opacity: .4
     }
-
     to {
         opacity: 1
     }
@@ -407,7 +392,6 @@ overskrifter*/
     from {
         opacity: .4
     }
-
     to {
         opacity: 1
     }
@@ -555,8 +539,6 @@ footer {
     div:nth-of-type(odd).team_member {
         flex-direction: row-reverse;
     }
-
-
 }
 
 

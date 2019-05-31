@@ -70,9 +70,10 @@ destHvemErVi = document.querySelector("#hvemervi");
 
 async function getHvemErVi() {
     let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
+    // Vi henter dataen fra en json-fil der hører til "hvem er vi?" podden som vi har liggende i Wordpress //
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
-    insertHvemErVi();
+    insertHvemErVi(); // Vi aktiverer HvemErVi funktionen for at sætte indholdet ind //
 }
 
 function insertHvemErVi() {
@@ -96,7 +97,7 @@ function insertHvemErVi() {
         destHvemErVi.insertAdjacentHTML("beforeend", template);
     });
 }
-
+// Vi sætter billede, overskrift og indhold ind i vores template. Disse svarer til vores fields i pods. //
 getHvemErVi();
 
 
@@ -361,25 +362,25 @@ function showSlides() {
 
         let nextSlide = function () {
             // console.log("Next slide ["+currentSlide+"]", slideshow);
-            // Hide all
+            // Vi skjuler alle slides //
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            // Next slide, and show that slide
+            // Vi viser næste slide //
             currentSlide++;
             if (currentSlide > slides.length) {
                 currentSlide = 1
             }
             slides[currentSlide - 1].style.display = "block";
 
-            // Wait 2 sec before switching again
+            // Hvor længe hver slide skal vises //
             setTimeout(nextSlide, 2000);
         };
 
         if (slides.length === 0) {
             console.log("No images loaded in slideshow", slideshow);
         } else {
-            nextSlide();
+            nextSlide(); // næste slide vises //
         }
     });
 }

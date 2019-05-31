@@ -367,7 +367,7 @@ overskrifter*/
     align-items: center;
     padding: var(--main-padding);
     grid-template-columns: 1fr;
-    grid-column-gap: 5px;
+    grid-column-gap: 10px;
 }
 
 /* Slideshow container til mobilen*/
@@ -472,8 +472,9 @@ footer {
     margin-top: 200px;
     margin-left: 20px;
 }
-
-
+#adresse_overskrift {
+    margin-right: 30px;
+}
 /*----------------------------------------------------- 7. MEDIA QUERIES (tablet) ---------------------------------------*/
 
 /*LOGO inden loop video*/
@@ -578,8 +579,9 @@ footer {
     }
 
 }
+
 @media screen and (min-width: 400px) {
-       .header_arrow {
+    .header_arrow {
         position: absolute;
         top: 95vh;
         left: 60vw;
@@ -587,6 +589,7 @@ footer {
 
     }
 }
+
 @media screen and (min-width: 850px) {
 
 
@@ -683,6 +686,41 @@ footer {
 
     .team_member img {
         margin-top: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+
+    #firma_events img {
+        margin-left: 40px;
+        width: 80%;
+    }
+
+    #kurser_info img {
+        margin-left: 40px;
+        width: 80%;
+    }
+
+    #kurser img {
+
+        width: 90%;
+    }
+
+    #kurser .content_column {
+        margin: 20px;
+
+    }
+
+    #foredrag img {
+        width: 80%;
+        margin-left: 40px;
+        margin-bottom: 45px;
+
+    }
+     #hvemervi img {
+        width: 80%;
+        margin-left: 40px;
+        margin-bottom: 45px;
 
     }
 }

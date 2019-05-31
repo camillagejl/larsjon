@@ -73,8 +73,13 @@ a {
 }
 
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
-h1,
+h1 {
+    border-top: 2px solid var(--main-design-color);
+    width: fit-content;
+}
+
 h2 {
+    font-size: 2rem;
     border-top: 1px solid var(--main-design-color);
     width: fit-content;
 }
@@ -84,10 +89,12 @@ h2,
 h3,
 h4 {
     font-family: var(--main-heading-font);
+    font-weight: 300;
 }
 
 /*Gør at h1 har luft over- og under, og lige så meget padding i siderne som andet tekst*/
 h1 {
+    font-size: 3rem;
     margin: 5vh var(--main-padding);
 }
 
@@ -96,10 +103,9 @@ h1 {
 
 /*--------------------------------------------------- 2.1 BURGER MENU -------------------------------------*/
 .burger_menu {
-    width: 94vw;
+    width: 100vw;
     /*Sat til 94, så det bliver 100 sammen med padding*/
-    height: 30px;
-    padding: 3vw;
+    height: 50px;
     background-color: var(--main-background-color);
     text-align: right;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
@@ -110,7 +116,8 @@ h1 {
 }
 
 .burger_menu img {
-    height: 100%;
+    height: 30px;
+    padding: 10px;
     width: auto;
 }
 
@@ -130,13 +137,15 @@ nav {
     flex-direction: column;
     justify-content: center;
     z-index: 99;
-    overflow: hidden;
+}
+
+.menu_logo {
+    width: 80%;
+    margin: 0 auto;
 }
 
 /*Liste med menupunkter*/
 nav ul {
-    padding: 0 0 200px 0;
-    /*Rykker menuen op, så den ikke er helt i midten men lidt over*/
     list-style: none;
     /*Fjerner standard list-styling (dvs. bullets)*/
     margin-top: 50px;
@@ -450,12 +459,6 @@ footer {
     z-index: 101;
 }
 
-.menu_logo {
-    width: 80%;
-    margin-top: 200px;
-    margin-left: 20px;
-}
-
 #adresse_overskrift {
     margin-right: 30px;
 }
@@ -493,46 +496,70 @@ footer {
     div:nth-of-type(odd).team_member {
         flex-direction: row-reverse;
     }
-}
 
-@media screen and (max-width: 400px) {
-    .team_member .text_content {
-        padding-bottom: 20px;
-        border-bottom: 2px solid var(--main-design-color);
-        margin-bottom: 10px;
+    nav {
+        width: 50vw;
+        padding: 0 25vw;
+    }
+
+    @media screen and (min-width: 1023px) {
+
+        .mobile_logo {
+            display: none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        section:nth-of-type(odd) .content {
+            flex-direction: row-reverse;
+        }
+
+        section:nth-of-type(odd) .content .image_content {
+            margin-left: 40px;
+        }
+
+        section:nth-of-type(even) .content .image_content {
+            margin-right: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+        }
+
+        .team_member {
+            margin-bottom: 10px;
+        }
+
+        #vores_team .image_content {
+            margin-left: 0;
+        }
+
+        .bog.sub_section {
+            margin: 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
     }
 
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1200px) {
     header {
         height: auto;
     }
 
-    .mobile_logo {
-        display: none;
-    }
-
-    main {
-        padding-left: 350px;
-        padding-right: 50px;
-        margin: 5vh auto;
-        max-width: 1300px;
-    }
-
-    .vores_team_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 5px;
-    }
-
-
     .burger_menu {
         display: none;
-    }
-
-    .mobile_hidden {
-        display: flex;
     }
 
     nav {
@@ -542,82 +569,41 @@ footer {
         top: 0;
     }
 
+    nav ul {
+        padding: 0 0 200px 0;
+    }
+
     nav ul li a {
-        /*
-        display: block;
-        padding: 0.5rem 1rem;
-*/
         color: white;
         text-decoration: none;
     }
 
+    .menu_logo {
+        width: 100%;
+    }
+
+    .hide_overflow {
+        overflow: hidden;
+    }
+
+    .mobile_hidden {
+        display: flex;
+    }
+
+    main {
+        padding-left: 300px;
+        padding-right: 50px;
+        margin: 5vh auto;
+        max-width: 1300px;
+    }
 
     .grid-3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 10px;
-    }
-
-    .content {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    section:nth-of-type(odd) .content {
-        flex-direction: row-reverse;
-    }
-
-    .grid {
-        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .team_member {
-        margin-bottom: 10px;
-
-    }
-
-    .team_member img {
-        margin-top: 25px;
-        margin-left: 10px;
-        margin-right: 10px;
-
-    }
-
-    #firma_events img {
-        margin-left: 40px;
-        width: 80%;
-    }
-
-    #kurser_info img {
-        margin-left: 40px;
-        width: 80%;
-    }
-
-    #kurser img {
-
-        width: 90%;
-    }
-
-    #kurser .content_column {
-        margin: 20px;
-
-    }
-
-    #foredrag img {
-        width: 80%;
-        margin-left: 40px;
-        margin-bottom: 45px;
-
-    }
-
-    #hvemervi img {
-        width: 80%;
-        margin-left: 40px;
-        margin-bottom: 45px;
-
+@media screen and (min-width: 1400px) {
+    .grid-3 {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

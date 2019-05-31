@@ -38,6 +38,7 @@ function start() {
     document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function () {
             document.querySelector("nav").classList.toggle("mobile_hidden");
+        document.querySelector('html').classList.toggle('hide_overflow');
         });
     });
 
@@ -107,7 +108,7 @@ getHvemErVi();
 
 // ----- VORES TEAM -----
 
-destVoresTeam = document.querySelector(".vores_team_grid");
+destVoresTeam = document.querySelector(".grid");
 
 async function getVoresTeam() {
     let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/vores_team?per_page=100";
@@ -234,7 +235,7 @@ function insertKurser() {
     section.forEach(section => {
         let template =
             `
-                <div class="content_column content">
+                <div class="content_column">
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>

@@ -27,18 +27,22 @@ function start() {
     }
 
 
+    // --------------------- nav menu ------------------
+    let mainNavLinks = document.querySelectorAll("nav ul li a");
+
     document.querySelector(".burger_menu").addEventListener("click", function () {
         document.querySelector("nav").classList.toggle("mobile_hidden");
-        document.querySelector("header").classList.toggle("hidden");
-        document.querySelector("main").classList.toggle("hidden");
+        document.querySelector('html').classList.toggle('hide_overflow');
     });
 
-    // --------------------- nav menu ------------------
+    document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function () {
+            document.querySelector("nav").classList.toggle("mobile_hidden");
+        });
+    });
 
-    //https://codemyui.com/sticky-sidebar-navigation-on-scroll/?fbclid=IwAR1BWZ7mLpb_EUsm7mUra_6SpXtGt5LDsqpUuPtFRa4HwJagNzSU0Po-vpU
-
-    let mainNavLinks = document.querySelectorAll("nav ul li a");
-    // let mainSections = document.querySelectorAll("main section");
+    // Menu-linjen viser hvor man er på siden
+    // https://codemyui.com/sticky-sidebar-navigation-on-scroll/?fbclid=IwAR1BWZ7mLpb_EUsm7mUra_6SpXtGt5LDsqpUuPtFRa4HwJagNzSU0Po-vpU
 
     let lastId;
     let cur = [];
@@ -116,7 +120,7 @@ function insertVoresTeam() {
     section.forEach(section => {
         let template =
             `
-            <div class="team_member">
+            <div class="team_member sub_section">
                         <div class="image_content">
                             <img src="${section.billede.guid}">
                         </div>
@@ -230,7 +234,7 @@ function insertKurser() {
     section.forEach(section => {
         let template =
             `
-                <div class="content_column">
+                <div class="content_column content">
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>
@@ -265,7 +269,7 @@ function insertBoeger() {
     section.forEach(section => {
         let template =
             `
-<div class="bog">
+<div class="bog sub_section">
                     <img src="${section.billede.guid}">
                     <div class="bog__details text_content">
                         <h3>${section.titel}</h3>

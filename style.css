@@ -51,6 +51,7 @@ body {
 }
 
 img {
+    display: block;
     width: 100%;
     /*Gør at billeder passer ind i div'er i stedet for at vises i fuld størrelse*/
 }
@@ -81,6 +82,7 @@ h1 {
 }
 
 h2 {
+    margin: 10px 0;
     font-size: 2rem;
     padding-top: 10px;
     border-top: 1px solid var(--main-design-color);
@@ -88,13 +90,24 @@ h2 {
 }
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
     font-family: var(--main-heading-font);
     font-weight: 300;
 }
 
+h3 {
+    font-family: var(--main-heading-font);
+    font-weight: 700;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-family: var(--main-heading-font);
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
 
 
 /*---------------------------------------------------- 2. NAVIGATION ---------------------------------------*/
@@ -102,10 +115,11 @@ h4 {
 /*--------------------------------------------------- 2.1 BURGER MENU -------------------------------------*/
 .burger_menu {
     width: 100vw;
+    display: flex;
+    justify-content: flex-end;
     /*Sat til 94, så det bliver 100 sammen med padding*/
-    height: 80px;
+    /*height: 80px;*/
     background-color: var(--main-background-color);
-    text-align: right;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
     position: fixed;
     top: 0;
@@ -114,11 +128,11 @@ h4 {
 }
 
 .burger_menu img {
-    height: 30px;
+    height: 25px;
     padding: 10px;
     width: auto;
-    margin-top: 15px;
-    margin-right: 10px;
+    /*margin-top: 15px;*/
+    /*margin-right: 10px;*/
 }
 
 
@@ -158,10 +172,12 @@ nav ul li {
 nav a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
 }
 
 /*Stregen som ligger før det nuværende menupunkt*/
 .menu_stroke {
+    display: inline-block;
     width: 12px;
     opacity: 0;
     height: 100%;
@@ -331,12 +347,17 @@ overskrifter*/
 
 
 /*--------------------------------------------------------- 4.3 BØGER FOR MOUSE DEVICES -----------------------------------------*/
-/*På telefonen følger bøger (vidst nok!) den generelle styling på siden, men på desktop har vi hover-funktionen*/
+/*På telefonen følger bøger den generelle styling på siden, men på desktop har vi hover-funktionen*/
 
 .bog {
     position: relative;
     /*Sørger for at alt der løber uden for div'en - dvs. uden for billedet - ikke kan ses*/
     overflow: hidden;
+}
+
+.bog h3 {
+    font-size: 1.5rem;
+    padding: 10px 0 40px 0;
 }
 
 /*Placerer boksen med tekst oven på billedet*/
@@ -353,6 +374,7 @@ overskrifter*/
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    padding: 0 10px;
     cursor: pointer;
 }
 
@@ -377,7 +399,7 @@ overskrifter*/
     min-height: 100vh;
     align-items: center;
     padding: var(--main-padding);
-    grid-column-gap: 10px;
+    grid-gap: 10px;
 }
 
 /* Slideshow-container til mobilen*/
@@ -504,21 +526,21 @@ footer {
         --main-padding: 50px;
     }
 
-    .team_member .text_content {
-        border: none;
-        margin: 1vw;
-
-    }
-
     .team_member {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
+    .team_member .text_content {
+        border: none;
+        margin: 0 20px;
+        padding: 0;
+        flex: 1.5;
+    }
+
     div:nth-of-type(odd).team_member {
         flex-direction: row-reverse;
-
     }
 
     nav {
@@ -533,63 +555,60 @@ footer {
     .header_arrow_white {
         display: block;
     }
+}
 
-    @media screen and (min-width: 1023px) {
+@media screen and (min-width: 1023px) {
 
-        .mobile_logo {
-            display: none;
-        }
+    .mobile_logo {
+        display: none;
+    }
 
-        .content {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
-        section:nth-of-type(odd) .content {
-            flex-direction: row-reverse;
-        }
+    section:nth-of-type(odd) .content {
+        flex-direction: row-reverse;
+    }
 
-        section .image_content {
-            margin-top: 1.8rem;
-        }
+    section .image_content {
+        margin-top: 18px;
+    }
 
-        section:nth-of-type(odd) .content .image_content {
-            margin-left: 40px;
-        }
+    section:nth-of-type(odd) .content .image_content {
+        margin-left: 40px;
+    }
 
-        section:nth-of-type(even) .content .image_content {
-            margin-right: 40px;
-        }
+    section:nth-of-type(even) .content .image_content {
+        margin-right: 40px;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 20px;
-
-        }
-
-        .team_member {
-            margin-bottom: 10px;
-        }
-
-        #vores_team .image_content {
-            margin-left: 0;
-        }
-
-        .bog.sub_section {
-            margin: 0;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 10px;
-        }
-
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
 
     }
 
+    .team_member {
+        margin-bottom: 0;
+    }
+
+    #vores_team .image_content {
+        margin: 0;
+    }
+
+    .bog.sub_section {
+        margin: 0;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -603,14 +622,13 @@ footer {
 
     nav {
         width: 200px;
-        padding: 0 25px;
+        padding: 0 20px;
         position: sticky;
         top: 0;
     }
 
     nav ul {
-        margin-top: 5vw;
-        padding: 0 0 200px 0;
+        padding: 5vh 0 20vh 0;
     }
 
     nav ul li a {

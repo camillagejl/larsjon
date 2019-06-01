@@ -49,7 +49,7 @@ function start() {
     let cur = [];
 
     window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY + 450;
+        let fromTop = window.scrollY + 350;
 
         mainNavLinks.forEach(link => {
             let section = document.querySelector(link.hash);
@@ -313,6 +313,26 @@ function insertKontakt() {
 }
 
 getKontakt();
+
+
+// ----- Webshop -----
+
+destWebshop = document.querySelector("#webshop");
+
+async function getWebshop() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/webshop/220";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertWebshop();
+}
+
+function insertWebshop() {
+    destWebshop.querySelector("h2").textContent = `${section.overskrift}`;
+    destWebshop.querySelector("p").innerHTML = `${section.indhold}`;
+
+}
+
+getWebshop();
 
 
 // ----- GALLERIER -----

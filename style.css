@@ -82,6 +82,7 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    padding-top: 10px;
     border-top: 1px solid var(--main-design-color);
     width: fit-content;
 }
@@ -468,6 +469,10 @@ footer {
     overflow: hidden;
 }
 
+.margin-left {
+    margin-left: var(--main-padding);
+}
+
 
 /*----------------------------------------------------- 7. MEDIA QUERIES ---------------------------------------*/
 
@@ -517,6 +522,10 @@ footer {
 
         section:nth-of-type(odd) .content {
             flex-direction: row-reverse;
+        }
+
+        section .image_content {
+            margin-top: 1.8rem;
         }
 
         section:nth-of-type(odd) .content .image_content {

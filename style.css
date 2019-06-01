@@ -430,6 +430,11 @@ overskrifter*/
     border-bottom: 2px solid var(--main-design-color);
 }
 
+.webshop_button a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .webshop_button {
     max-width: 70%;
     background-color: var(--main-design-color);
@@ -438,6 +443,7 @@ overskrifter*/
     padding: 20px 10px;
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .webshop_button:hover {

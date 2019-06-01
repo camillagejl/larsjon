@@ -146,7 +146,7 @@ nav {
 nav ul {
     list-style: none;
     /*Fjerner standard list-styling (dvs. bullets)*/
-    margin-top: 50px;
+    margin-top: 5vh;
 }
 
 nav ul li {
@@ -206,7 +206,7 @@ header {
 
 #myVideo {
     position: absolute;
-    bottom: 20vw;
+    bottom: 0vw;
     /*den er sat til 100% fordi man skal kunne se hele videoen, og ikke hvor den er zoomet ind*/
     width: 100%;
     /*
@@ -349,11 +349,13 @@ overskrifter*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
 }
 
 /*Placerer tekst-boksen 90% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
 .is_not_touch_device .bog__details {
-    top: 90%;
+    top: 85%;
     border: 0;
     margin: 0;
 }
@@ -430,11 +432,14 @@ overskrifter*/
     max-width: 70%;
     background-color: var(--main-design-color);
     color: white;
-    margin: 0 auto 10px auto;
+    margin: 5vw auto 10px auto;
     padding: 20px 10px;
     text-align: center;
+    cursor: pointer;
 }
-
+.webshop_button:hover {
+  background-color: rgba(3, 12, 38, 0.85);
+}
 
 /*------------------------------------------------------------- 5. FOOTER ----------------------------------------*/
 
@@ -491,6 +496,8 @@ footer {
 
     .team_member .text_content {
         border: none;
+        margin: 2.5vw;
+
     }
 
     .team_member {
@@ -501,6 +508,7 @@ footer {
 
     div:nth-of-type(odd).team_member {
         flex-direction: row-reverse;
+
     }
 
     nav {
@@ -540,6 +548,7 @@ footer {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 20px;
+
         }
 
         .team_member {
@@ -573,13 +582,14 @@ footer {
     }
 
     nav {
-        width: 250px;
+        width: 200px;
         padding: 0 25px;
         position: sticky;
         top: 0;
     }
 
     nav ul {
+        margin-top: 5vw;
         padding: 0 0 200px 0;
     }
 
@@ -589,6 +599,7 @@ footer {
     }
 
     .menu_logo {
+        margin-top: 7vw;
         width: 100%;
     }
 
@@ -608,8 +619,12 @@ footer {
     }
 
     .grid-3 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
+      .header_arrow {
+        left: 55vw;
+    }
+
 }
 
 @media screen and (min-width: 1400px) {

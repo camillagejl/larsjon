@@ -103,7 +103,7 @@ h4 {
 .burger_menu {
     width: 100vw;
     /*Sat til 94, så det bliver 100 sammen med padding*/
-    height: 50px;
+    height: 80px;
     background-color: var(--main-background-color);
     text-align: right;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.13);
@@ -117,6 +117,8 @@ h4 {
     height: 30px;
     padding: 10px;
     width: auto;
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
 
@@ -437,8 +439,9 @@ overskrifter*/
     text-align: center;
     cursor: pointer;
 }
+
 .webshop_button:hover {
-  background-color: rgba(3, 12, 38, 0.85);
+    background-color: rgba(3, 12, 38, 0.85);
 }
 
 /*------------------------------------------------------------- 5. FOOTER ----------------------------------------*/
@@ -496,7 +499,7 @@ footer {
 
     .team_member .text_content {
         border: none;
-        margin: 2.5vw;
+        margin: 1vw;
 
     }
 
@@ -514,6 +517,14 @@ footer {
     nav {
         width: 50vw;
         padding: 0 25vw;
+    }
+
+    .header_arrow_blue {
+        display: none;
+    }
+
+    .header_arrow_white {
+        display: block;
     }
 
     @media screen and (min-width: 1023px) {
@@ -568,6 +579,8 @@ footer {
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 10px;
         }
+
+
     }
 
 }
@@ -621,10 +634,18 @@ footer {
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
     }
-      .header_arrow {
+
+    .header_arrow {
         left: 55vw;
     }
 
+    .header_arrow_blue {
+        display: none;
+    }
+
+    .header_arrow_white {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1400px) {

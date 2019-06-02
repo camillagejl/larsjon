@@ -48,6 +48,7 @@
 body {
     margin: 0;
     /*Fjerner standard margin på 8px fra siden*/
+    overflow-x: hidden;
 }
 
 img {
@@ -96,7 +97,7 @@ h2 {
 }
 
 h2 {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h3 {
@@ -466,6 +467,14 @@ overskrifter*/
     }
 }
 
+
+#bottom_gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    padding: 50px;
+}
+
 /*----------------------------------------------------------- 4.4 WEBSHOP -----------------------------------------*/
 
 #webshop p {
@@ -689,9 +698,18 @@ footer {
         width: 50vw;
         padding: 0 25vw;
     }
+    #bottom_gallery {
+        grid-gap: 50px;
+        padding: 100px;
+    }
 }
 
 @media screen and (min-width: 1023px) {
+        #bottom_gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
     :root {
         --main-padding: 50px;
     }
@@ -721,7 +739,7 @@ footer {
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
+        grid-gap: 40px;
 
     }
 
@@ -827,7 +845,7 @@ footer {
     main {
         padding-left: 300px;
         padding-right: 50px;
-        margin: 5vh auto;
+        margin: 5vh auto 0 auto;
         max-width: 1300px;
     }
 
@@ -848,6 +866,4 @@ footer {
     .map .mapbox {
         margin-top: 90px;
     }
-
-
 }

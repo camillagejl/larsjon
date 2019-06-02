@@ -381,6 +381,34 @@ function insertGallery() {
 getGallery();
 
 
+
+
+
+// ----- Bottom gallery -----
+
+destBottomGallery = document.querySelector("#bottom_gallery");
+
+async function getBottomGallery() {
+    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/galleri/226";
+    let jsonData = await fetch(pagesUrl);
+    section = await jsonData.json();
+    insertBottomGallery();
+}
+
+function insertBottomGallery() {
+
+    section.billeder.forEach(image => {
+        destBottomGallery.innerHTML += `<img src="${image.guid}">`;
+
+
+    });
+
+}
+
+getBottomGallery();
+
+
+
 /*************** Slideshow ****************/
 
 function showSlides() {

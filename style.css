@@ -507,26 +507,23 @@ overskrifter*/
 }
 
 .map svg {
-    /*    background-image: url("illustatormap.svg");*/
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 100%;
-    position: absolute;
+    width: 80%;
+    /*position: absolute;*/
     top: 0;
     height: 100%;
 
 }
 
 .cls-1 {
-    fill: #a9b1c4;
+    fill: #a9b2c3;
 }
 
 .cls-2 {
-    fill: #6f8bcf;
+    fill: #698fb5;
 }
 
 .cls-3 {
-    fill: #3a5190;
+    fill: #455e84;
 }
 
 .cls-4 {
@@ -536,9 +533,10 @@ overskrifter*/
 
 .map .mapbox {
     position: absolute;
-    /*top: 100px;*/
-    left: 250px;
-    z-index: 100;
+    right: 0;
+    margin-top: 20px;
+    z-index: 98;
+    max-width: 40%;
 }
 
 .map h3 {
@@ -558,12 +556,13 @@ overskrifter*/
 
 /*------NEMLIG------*/
 .nemligbox {
+    cursor: default;
     display: flex;
     margin: 10px 0;
 }
 
 .nemligbox .square {
-    background-color: #f38f1a;
+    background-color: #698fb5;
     margin-top: 4px;
 }
 
@@ -584,12 +583,13 @@ overskrifter*/
 
 /*------LARSJON------*/
 .larsjon {
+    cursor: default;
     display: flex;
     margin: 10px 0;
 }
 
 .larsjon .square {
-    background-color: #3565ae;
+    background-color: #455e84;
 }
 
 .larsjonlogo {
@@ -605,6 +605,7 @@ overskrifter*/
 
 /*------BUTIKKEN------*/
 .butikken {
+    cursor: default;
     display: flex;
 }
 
@@ -664,7 +665,7 @@ footer {
     }
 
     :root {
-        --main-padding: 50px;
+        --main-padding: 80px;
     }
 
     .team_member {
@@ -691,6 +692,9 @@ footer {
 }
 
 @media screen and (min-width: 1023px) {
+    :root {
+        --main-padding: 50px;
+    }
 
     .content {
         display: flex;
@@ -737,6 +741,11 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
+    }
+
+    #kurser .text_content {
+        border: none;
+        padding-bottom: 0;
     }
 }
 
@@ -835,4 +844,10 @@ footer {
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .map .mapbox {
+        margin-top: 90px;
+    }
+
+
 }

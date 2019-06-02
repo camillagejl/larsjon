@@ -447,9 +447,9 @@ function changeColor1() {
     let elements2 = document.getElementsByClassName("cls-3");
 
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#fd841c";
+        elements[i].style.fill = "#698fb5";
     for (let i = 0; i < elements2.length; i++)
-        elements2[i].style.fill = "#fd841c";
+        elements2[i].style.fill = "#698fb5";
 }
 
 
@@ -461,9 +461,9 @@ function hoverOut1() {
     let elements2 = document.getElementsByClassName("cls-3");
 
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#fd841c";
+        elements[i].style.fill = "#698fb5";
     for (let i = 0; i < elements2.length; i++)
-        elements2[i].style.fill = "#93bdff";
+        elements2[i].style.fill = "#455e84";
 
 }
 
@@ -481,10 +481,10 @@ function changeColor2() {
 
     //HOVER FARVE
     for (let i = 0; i < elements2.length; i++)
-        elements2[i].style.fill = "#717171";
+        elements2[i].style.fill = "#a9b2c3";
 
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#93bdff";
+        elements[i].style.fill = "#455e84";
 
 
 }
@@ -496,9 +496,9 @@ function hoverOut2() {
 
     //HOVER-OUT FARVE
     for (let i = 0; i < elements2.length; i++)
-        elements2[i].style.fill = "#fd841c";
+        elements2[i].style.fill = "#698fb5";
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#93bdff";
+        elements[i].style.fill = "#455e84";
 
 }
 
@@ -511,7 +511,7 @@ function changeColor3() {
     //HOVER FARVE
     let elements = document.getElementsByClassName("cls-4");
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#a40c04";
+        elements[i].style.fill = "#ff000d";
 
 
 }

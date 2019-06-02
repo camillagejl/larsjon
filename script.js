@@ -414,3 +414,114 @@ function showSlides() {
         }
     });
 }
+
+
+
+//MAP
+//document.addEventListener("DOMContentLoaded", hoverOver);
+
+
+//--------------NEMLIG--------------
+document.querySelector(".nemligbox").addEventListener("mouseover", changeColor1); //når musen er rør, gå til funktion
+document.querySelector(".nemligbox").addEventListener("mouseout", hoverOut1);
+
+//--------------LARSJON--------------
+document.querySelector(".larsjon").addEventListener("mouseover", changeColor2);
+document.querySelector(".larsjon").addEventListener("mouseout", hoverOut2);
+
+//--------------BUTIK--------------
+document.querySelector(".butikken").addEventListener("mouseover", changeColor3);
+document.querySelector(".butikken").addEventListener("mouseout", hoverOut3);
+
+
+
+
+
+
+//----------------------------NEMLIG----------------------------
+function changeColor1() {
+    console.log("color");
+
+    //HOVER FARVE
+    let elements = document.getElementsByClassName("cls-2"); //laver en variabel der tager fat i alle classer ved navn "cls-2"
+    let elements2 = document.getElementsByClassName("cls-3");
+
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#fd841c";
+    for (let i = 0; i < elements2.length; i++)
+        elements2[i].style.fill = "#fd841c";
+}
+
+
+function hoverOut1() {
+    console.log("none");
+
+    //HOVER-OUT FARVE
+    let elements = document.getElementsByClassName("cls-2");
+    let elements2 = document.getElementsByClassName("cls-3");
+
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#fd841c";
+    for (let i = 0; i < elements2.length; i++)
+        elements2[i].style.fill = "#93bdff";
+
+}
+
+
+
+
+
+
+
+//----------------------------LARSJON----------------------------
+function changeColor2() {
+    console.log("color");
+    let elements2 = document.getElementsByClassName("cls-2");
+    let elements = document.getElementsByClassName("cls-3");
+
+    //HOVER FARVE
+    for (let i = 0; i < elements2.length; i++)
+        elements2[i].style.fill = "#717171";
+
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#93bdff";
+
+
+}
+
+function hoverOut2() {
+    console.log("none");
+    let elements2 = document.getElementsByClassName("cls-2");
+    let elements = document.getElementsByClassName("cls-3");
+
+    //HOVER-OUT FARVE
+    for (let i = 0; i < elements2.length; i++)
+        elements2[i].style.fill = "#fd841c";
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#93bdff";
+
+}
+
+
+
+//----------------------------BUTIKKEN----------------------------
+function changeColor3() {
+    console.log("color");
+
+    //HOVER FARVE
+    let elements = document.getElementsByClassName("cls-4");
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#a40c04";
+
+
+}
+
+function hoverOut3() {
+    console.log("none");
+
+    //HOVER-OUT FARVE
+    let elements = document.getElementsByClassName("cls-4");
+    for (let i = 0; i < elements.length; i++)
+        elements[i].style.fill = "#030c26";
+
+}

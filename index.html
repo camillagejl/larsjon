@@ -9,7 +9,7 @@
     <meta name="description" content="">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
     <title>Florist Lars Jon Flower Studio</title>
@@ -30,13 +30,14 @@
 
 <!---------------------------------------------------------- NAVIGATION -------------------------------------->
 <div class="burger_menu">
-    <img src="elements/burger_icon.svg" alt="Burger icon">
+    <img src="elements/burger_icon.svg" id="burger_icon" alt="Burger icon">
+    <img src="elements/burger_icon_x.svg" id="burger_icon_x" alt="Burger icon" class="hidden" style="margin-right: 6px;">
 
 </div>
 
 <nav class="mobile_hidden">
     <a href="#" class="menu_logo">
-        <img src="elements/logo_white.png" alt="Florist Lars Jon Flower Studio logo">
+        <img src="elements/hvidlogo2.svg" alt="Florist Lars Jon Flower Studio logo">
     </a>
     <ul>
         <li>
@@ -84,9 +85,11 @@
         <img src="elements/logo_blue.svg">
     </a>
 
-    <video autoplay muted loop id="myVideo">
-        <source src="myVideo/Lars_Jon_video_web.mp4" type="video/mp4">
-    </video>
+    <div class="video_div">
+        <video autoplay muted loop id="myVideo">
+            <source src="myVideo/Lars_Jon_video_web.mp4" type="video/mp4" class="videoen">
+        </video>
+    </div>
 
     <a href="#hvemervi_page" class="header_arrow">
         <img src="elements/arrow_down_blue.png" class="header_arrow_blue">

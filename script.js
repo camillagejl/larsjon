@@ -33,12 +33,16 @@ function start() {
     document.querySelector(".burger_menu").addEventListener("click", function () {
         document.querySelector("nav").classList.toggle("mobile_hidden");
         document.querySelector('html').classList.toggle('hide_overflow');
+        document.querySelector('#burger_icon').classList.toggle('hidden');
+        document.querySelector('#burger_icon_x').classList.toggle('hidden');
     });
 
     document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function () {
+        link.addEventListener("click", function () {
             document.querySelector("nav").classList.toggle("mobile_hidden");
-        document.querySelector('html').classList.toggle('hide_overflow');
+            document.querySelector('html').classList.toggle('hide_overflow');
+            document.querySelector('#burger_icon').classList.toggle('hidden');
+            document.querySelector('#burger_icon_x').classList.toggle('hidden');
         });
     });
 
@@ -102,6 +106,7 @@ function insertHvemErVi() {
         destHvemErVi.insertAdjacentHTML("beforeend", template);
     });
 }
+
 // Vi sætter billede, overskrift og indhold ind i vores template. Disse svarer til vores fields i pods. //
 getHvemErVi();
 
@@ -304,11 +309,11 @@ function insertKontakt() {
     destKontakt.querySelector("#aabningstider_overskrift").textContent = `${section.aabningstider_overskrift}`;
     destKontakt.querySelector("#aabningstider").innerHTML = `${section.aabningstider}`;
     destKontakt.querySelector("#kontakt_overskrift").textContent = `${section.kontakt_overskrift}`;
-    destKontakt.querySelector("#kontakt_tlf").innerHTML = `<a href="tel:${section.kontakt_tlf}">${section.kontakt_tlf}</a>`;
-    destKontakt.querySelector("#kontakt_email").innerHTML = `<a href="mailto:${section.kontakt_email}">${section.kontakt_email}</a>`;
+    destKontakt.querySelector("#kontakt_tlf").innerHTML = `Tlf: <a href="tel:${section.kontakt_tlf}">${section.kontakt_tlf}</a>`;
+    destKontakt.querySelector("#kontakt_email").innerHTML = `Email: <a href="mailto:${section.kontakt_email}">${section.kontakt_email}</a>`;
     destKontakt.querySelector("#presse_overskrift").textContent = `${section.presse_overskrift}`;
-    destKontakt.querySelector("#presse_tlf").innerHTML = `<a href="tel:${section.presse_tlf}">${section.presse_tlf}</a>`;
-    destKontakt.querySelector("#presse_email").innerHTML = `<a href="mailto:${section.presse_email}">${section.presse_email}</a>`;
+    destKontakt.querySelector("#presse_tlf").innerHTML = `Tlf: <a href="tel:${section.presse_tlf}">${section.presse_tlf}</a>`;
+    destKontakt.querySelector("#presse_email").innerHTML = `Email: <a href="mailto:${section.presse_email}">${section.presse_email}</a>`;
 
 }
 

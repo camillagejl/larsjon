@@ -78,7 +78,8 @@ h1 {
     border-top: 2px solid var(--main-design-color);
     width: fit-content;
     font-size: 2.4rem;
-    margin: 5vh var(--main-padding);
+    font-weight: 400;
+    margin: 5vh var(--main-padding) 0 var(--main-padding);
 }
 
 h2 {
@@ -92,6 +93,9 @@ h2 {
 h1,
 h2 {
     font-family: var(--main-heading-font);
+}
+
+h2 {
     font-weight: 300;
 }
 
@@ -182,7 +186,7 @@ nav a {
     opacity: 0;
     height: 100%;
     margin-bottom: 6px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 /*Sørger for, at menu_stroke er synlig på det nuværende menupunkt*/
@@ -203,17 +207,37 @@ header {
     align-items: center;
 }
 
+.video_div {
+    /*position: absolute;*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom: 5vh;
+    height: 60vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#myVideo {
+    width: 100vw;
+    overflow: hidden;
+}
+
 /*Logo i toppen af mobil-versionen*/
 .mobile_logo {
-    max-width: 100%;
-    /*Får logoet ned under burger-menuen*/
+    margin: 100px 0;
+    width: 60%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /*Styling for begge arrows i headeren - den blå til mobile og hvid til desktop*/
 .header_arrow {
-    position: absolute;
-    top: 95vh;
+    /*position: absolute;*/
+    /*top: 95vh;*/
     width: auto;
+    margin-bottom: 20px;
     /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
 }
 
@@ -222,17 +246,17 @@ header {
     display: none;
 }
 
-#myVideo {
-    position: absolute;
-    bottom: 0vw;
-    /*den er sat til 100% fordi man skal kunne se hele videoen, og ikke hvor den er zoomet ind*/
-    width: 100%;
-    /*
-    min-width: 100%;
-    min-height: 100vh;
-*/
-    z-index: -1;
-}
+/*#myVideo {*/
+/*    position: absolute;*/
+/*    bottom: 0vw;*/
+/*    !*den er sat til 100% fordi man skal kunne se hele videoen, og ikke hvor den er zoomet ind*!*/
+/*    width: 100%;*/
+/*    !**/
+/*    min-width: 100%;*/
+/*    min-height: 100vh;*/
+/**!*/
+/*    z-index: -1;*/
+/*}*/
 
 .social_media_icons {
     position: absolute;
@@ -298,7 +322,7 @@ section {
     /*min-height sørger for, at hver section kan være på skærmen alene, uden man kan se de andre*/
     min-height: 100vh;
     align-items: center;
-    padding: 50px 0;
+    /*padding: 50px 0;*/
     /*Sørger for, at der altid er noget white space omkring content-boksene*/
 }
 
@@ -369,7 +393,7 @@ overskrifter*/
     left: 0;
     background: #F3F3F3;
     color: var(--main-design-color);
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -396,7 +420,7 @@ overskrifter*/
 .desktop_gallery {
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
-    min-height: 100vh;
+    min-height: 80vh;
     align-items: center;
     padding: var(--main-padding);
     grid-gap: 10px;
@@ -479,8 +503,7 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    color: white;
-    background-color: var(--main-design-color);
+    color: var(--main-design-color);
     text-align: center;
     line-height: 50px;
 }
@@ -545,21 +568,9 @@ footer {
         width: 50vw;
         padding: 0 25vw;
     }
-
-    .header_arrow_blue {
-        display: none;
-    }
-
-    .header_arrow_white {
-        display: block;
-    }
 }
 
 @media screen and (min-width: 1023px) {
-
-    .mobile_logo {
-        display: none;
-    }
 
     .content {
         display: flex;
@@ -614,22 +625,42 @@ footer {
         height: auto;
     }
 
+    .header_arrow_blue {
+        display: none;
+    }
+
+    .header_arrow {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .header_arrow_white {
+        display: block;
+        z-index: 200;
+    }
+
+    .mobile_logo {
+        display: none;
+    }
+
     .burger_menu {
         display: none;
     }
 
     nav {
-        width: 200px;
+        width: 225px;
         padding: 0 20px;
         position: sticky;
         top: 0;
     }
 
     nav ul {
-        padding: 5vh 0 20vh 0;
+        padding: 5vh 20px 20vh 0;
     }
 
     nav ul li a {
+        font-family: Montserrat, sans-serif;
+        font-weight: 200;
         color: white;
         text-decoration: none;
     }
@@ -637,6 +668,23 @@ footer {
     .menu_logo {
         margin-top: 7vw;
         width: 100%;
+    }
+
+    .video_div {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    #myVideo {
+        position: absolute;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+        object-fit: cover;
     }
 
     .hide_overflow {
@@ -656,18 +704,6 @@ footer {
 
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .header_arrow {
-        left: 55vw;
-    }
-
-    .header_arrow_blue {
-        display: none;
-    }
-
-    .header_arrow_white {
-        display: block;
     }
 }
 

@@ -553,11 +553,17 @@ function hoverOut3() {
         elements[i].style.fill = "#030c26";
 
 }
+
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById("nyhedsbrev_form").style.display = "block";
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById("nyhedsbrev_form").style.display = "none";
 }
 
+function submitNyhedsbrev() {
+    document.getElementById("nyhedsbrev").style.display = "none";
+    document.getElementById("nyhedsbrev_tak").style.display = "block";
+
+}

@@ -48,7 +48,6 @@
 body {
     margin: 0;
     /*Fjerner standard margin på 8px fra siden*/
-    overflow-x: hidden;
 }
 
 img {
@@ -59,6 +58,7 @@ img {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -175,7 +175,9 @@ nav ul li {
 }
 
 nav a {
-    color: white;
+    font-family: Montserrat, sans-serif;
+    font-weight: 200;
+    color: var(--main-background-color);
     text-decoration: none;
     font-size: 1.1rem;
 }
@@ -680,7 +682,7 @@ overskrifter*/
 .form-container .cancel {
     position: absolute;
     margin-top: 15px;
-    left: 295px;
+    right: 20px;
     background-image: url(elements/burger_icon_x.svg);
     background-repeat: no-repeat;
     background-color: transparent;
@@ -883,19 +885,12 @@ footer {
     nav {
         width: 225px;
         padding: 0 20px;
-        position: sticky;
+        /*position: sticky;*/
         top: 0;
     }
 
     nav ul {
         padding: 5vh 20px 20vh 0;
-    }
-
-    nav ul li a {
-        font-family: Montserrat, sans-serif;
-        font-weight: 200;
-        color: white;
-        text-decoration: none;
     }
 
     .menu_logo {
@@ -921,7 +916,7 @@ footer {
     }
 
     .hide_overflow {
-        overflow: scroll;
+        overflow: auto;
     }
 
     .mobile_hidden {

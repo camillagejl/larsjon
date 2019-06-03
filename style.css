@@ -162,6 +162,7 @@ nav {
 .menu_logo {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 /*Liste med menupunkter*/
@@ -169,6 +170,7 @@ nav ul {
     list-style: none;
     /*Fjerner standard list-styling (dvs. bullets)*/
     margin-top: 5vh;
+    margin-bottom: 15vh;
 }
 
 nav ul li {
@@ -834,7 +836,7 @@ footer {
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 40px;
+        grid-gap: 20px;
 
     }
 
@@ -869,12 +871,14 @@ footer {
 
     .header_arrow {
         position: absolute;
+        left: 50vw;
         bottom: 0;
     }
 
     .header_arrow_white {
         display: block;
         z-index: 200;
+
     }
 
     .mobile_logo {

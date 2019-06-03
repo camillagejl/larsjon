@@ -31,7 +31,7 @@ function start() {
     let mainNavLinks = document.querySelectorAll("nav ul li a");
 
     document.querySelector(".burger_menu").addEventListener("click", function () {
-        document.querySelector("nav").classList.toggle("mobile_hidden");
+        document.querySelector("nav").classList.toggle("menu_position");
         document.querySelector('html').classList.toggle('hide_overflow');
         document.querySelector('#burger_icon').classList.toggle('hidden');
         document.querySelector('#burger_icon_x').classList.toggle('hidden');
@@ -39,7 +39,7 @@ function start() {
 
     document.querySelectorAll("nav a").forEach(link => {
         link.addEventListener("click", function () {
-            document.querySelector("nav").classList.toggle("mobile_hidden");
+            document.querySelector("nav").classList.toggle("menu_position");
             document.querySelector('html').classList.toggle('hide_overflow');
             document.querySelector('#burger_icon').classList.toggle('hidden');
             document.querySelector('#burger_icon_x').classList.toggle('hidden');

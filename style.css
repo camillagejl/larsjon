@@ -151,11 +151,12 @@ nav {
     background-color: var(--main-design-color);
     position: fixed;
     left: 0;
-    top: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 99;
+    transition: all 0.8s ease-out;
 }
 
 .menu_logo {
@@ -196,6 +197,10 @@ nav a {
 /*Her er brugt opacity i stedet for display: none, for at undgå, at ting hopper, når den vises*/
 nav ul li a.current .menu_stroke {
     opacity: 1;
+}
+
+.menu_position {
+    bottom: 100vh;
 }
 
 /*--------------------------------------------------------- 3. HEADER ---------------------------------------*/
@@ -289,7 +294,7 @@ main {
 }
 
 .page_container {
-    padding-top: 5px;
+    padding-top: 15px;
 }
 
 ::-webkit-scrollbar {
@@ -856,7 +861,6 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
-
     .header_arrow_blue {
         display: none;
     }
@@ -934,6 +938,7 @@ footer {
     h1 {
         margin: 2vh var(--main-padding) 0 var(--main-padding);
     }
+
 }
 
 @media screen and (min-width: 1400px) {

@@ -856,9 +856,6 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
-    header {
-        height: auto;
-    }
 
     .header_arrow_blue {
         display: none;

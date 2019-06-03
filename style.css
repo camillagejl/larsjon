@@ -553,7 +553,9 @@ overskrifter*/
     z-index: 98;
     max-width: 40%;
 }
-
+.mapbox h3 {
+    cursor: pointer;
+}
 .map h3 {
     font-size: 1rem;
     font-weight: normal;

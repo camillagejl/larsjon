@@ -553,3 +553,11 @@ function hoverOut3() {
         elements[i].style.fill = "#030c26";
 
 }
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+

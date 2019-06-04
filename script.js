@@ -167,7 +167,7 @@ function insertFirma_events() {
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>
-                    <div class="text_content">
+                    <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
                         <p>
                             ${section.indhold}

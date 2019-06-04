@@ -162,7 +162,7 @@ nav {
 .menu_logo {
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 /*Liste med menupunkter*/
@@ -277,8 +277,34 @@ header {
     /*flex-basis: 1;*/
     flex-direction: row;
     top: auto;
+    left: 4vw;
     bottom: 3vh;
     height: 30px;
+}
+
+.social_media_icons_kontakt {
+    display: flex;
+    /*flex-basis: 1;*/
+    flex-direction: row;
+    margin-top: 0.5vh;
+    margin-left: -1vw;
+
+}
+
+.facebook_kontakt {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.instagram_kontakt {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+
 }
 
 .facebook {
@@ -290,6 +316,27 @@ header {
 .instagram {
     height: 100%;
     margin-left: 10px;
+}
+
+#sub_nav a {
+    text-decoration: none;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+
+}
+
+#sub_nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: 37vw;
+    font-family: var(--main-heading-font);
+}
+
+#sub_nav a:hover {
+    color: var(--main-design-color);
+
 }
 
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
@@ -361,7 +408,6 @@ section:nth-of-type(odd) .content {
     margin-bottom: 10px;
 }
 
-
 /*--------------------------------------------------------- 4.2 VORES TEAM -------------------------------------*/
 /*Bruges team Vores team, fordi alt skal være i én section (med samme baggrundsfarve) og have speciel margin og
 overskrifter*/
@@ -385,6 +431,9 @@ overskrifter*/
 
 /*--------------------------------------------------------- 4.3 BØGER FOR MOUSE DEVICES -----------------------------------------*/
 /*På telefonen følger bøger den generelle styling på siden, men på desktop har vi hover-funktionen*/
+#boeger {
+    height: 100vh;
+}
 
 .bog {
     position: relative;
@@ -433,7 +482,7 @@ overskrifter*/
 .desktop_gallery {
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
-    min-height: 80vh;
+    min-height: 50vh;
     align-items: center;
     padding: var(--main-padding);
     grid-gap: 10px;
@@ -559,9 +608,11 @@ overskrifter*/
     z-index: 98;
     max-width: 40%;
 }
+
 .mapbox h3 {
     cursor: pointer;
 }
+
 .map h3 {
     font-size: 1rem;
     font-weight: normal;
@@ -578,6 +629,7 @@ overskrifter*/
 
 
 /*------NEMLIG------*/
+
 .nemligbox {
     cursor: default;
     display: flex;
@@ -678,8 +730,7 @@ overskrifter*/
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
-}
+.form-container input[type=password]:focus {}
 
 /* Set a style for the submit/login button */
 .form-container .btn {
@@ -753,6 +804,8 @@ footer {
         width: auto;
     }
 
+
+
     .form-container input[type=text],
     .form-container input[type=password] {
         max-width: 150px;
@@ -764,7 +817,40 @@ footer {
     }
 }
 
+@media screen and (max-width: 410px) {
+    #webshop_page {
+        margin-top: 210vh;
+    }
+
+    #sub_nav a {
+        margin-left: 8vw;
+        width: auto;
+        padding: 0;
+    }
+
+    #sub_nav {
+        margin-left: -15px;
+        width: auto;
+        padding: 0;
+        margin-bottom: 8vh;
+    }
+
+    .social_media_icons_kontakt {
+        margin: 0;
+    }
+}
 @media screen and (min-width: 767px) {
+
+   #webshop_page {
+        margin-top: 240vh;
+    }
+
+    #sub_nav {
+        margin-top: -80px;
+        margin-bottom: 100px;
+        margin-left: 55vw;
+    }
+
     .desktop_gallery {
         display: grid;
     }
@@ -800,10 +886,15 @@ footer {
     }
 
     #bottom_gallery {
+
         grid-gap: 50px;
         padding: 100px;
     }
+
+
 }
+
+
 
 @media screen and (min-width: 1023px) {
     #desktop_video {
@@ -874,9 +965,17 @@ footer {
         border: none;
         padding-bottom: 0;
     }
+
+    #kurser h2 {
+        margin-top: 40px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
+
+    #webshop_page {
+        margin-top: 0;
+    }
     .header_arrow_blue {
         display: none;
     }
@@ -966,5 +1065,11 @@ footer {
 
     .map .mapbox {
         margin-top: 90px;
+    }
+
+    #sub_nav {
+        margin-top: -35px;
+        margin-bottom: 50px;
+        margin-left: 40vw;
     }
 }

@@ -94,7 +94,7 @@ function insertHvemErVi() {
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>
-                    <div class="text_content">
+                    <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
                         <p>
                             ${section.indhold}
@@ -130,7 +130,7 @@ function insertVoresTeam() {
                         <div class="image_content">
                             <img src="${section.billede.guid}">
                         </div>
-                        <div class="text_content">
+                        <div class="text_content" id="${section.slug}">
                             <h3>${section.navn}</h3>
                             <h4>${section.stilling}</h4>
                             <p>
@@ -204,7 +204,7 @@ function insertBlomsterskolen() {
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>
-                    <div class="text_content">
+                    <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
                             ${section.indhold}
                     </div>
@@ -244,7 +244,7 @@ function insertKurser() {
                     <div class="image_content">
                         <img src="${section.billede.guid}">
                     </div>
-                    <div class="text_content">
+                    <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
                         <p>
                             ${section.indhold}
@@ -277,7 +277,7 @@ function insertBoeger() {
             `
 <div class="bog sub_section">
                     <img src="${section.billede.guid}">
-                    <div class="bog__details text_content">
+                    <div class="bog__details text_content" id="${section.slug}">
                         <h3>${section.titel}</h3>
                         <h4>${section.udgivelse}</h4>
                         <p>${section.indhold}</p>

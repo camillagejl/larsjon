@@ -71,6 +71,11 @@ a {
     color: #b46d3a;
 }
 
+a:hover {
+    color: var(--main-design-color);
+
+}
+
 /*Giver h1 og h2 en streg over teksten, som passer med bredden på teksten*/
 h1 {
     border-top: 2px solid var(--main-design-color);
@@ -313,29 +318,26 @@ header {
     margin-left: 10px;
 }
 
-#sub_nav a {
+.sub_nav a {
     text-decoration: none;
-
     cursor: pointer;
     text-align: left;
-    width: 150px;
+    margin-right: 40px;
     padding: 0;
 
 }
 
-#sub_nav {
+.sub_nav {
     display: flex;
     flex-direction: row;
     font-family: var(--main-heading-font);
-    margin-top: 0px;
-    margin-left: 2vw;
+    margin-top: 0;
+    margin-left: var(--main-padding);
+    /*margin-left: 2vw;*/
     margin-bottom: 2vw;
 }
 
-#sub_nav a:hover {
-    color: var(--main-design-color);
 
-}
 
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
@@ -801,6 +803,10 @@ footer {
         left: auto;
         right: 0;
     }
+
+    .sub_nav a {
+        margin-right: 15px;
+    }
 }
 
 @media screen and (min-width: 767px) {
@@ -843,8 +849,7 @@ footer {
         padding: 100px;
     }
 
-    #sub_nav {
-        margin-left: 50px;
+    .sub_nav {
         margin-top: 2vw;
         margin-bottom: 0;
     }

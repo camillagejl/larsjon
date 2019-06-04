@@ -320,18 +320,21 @@ header {
 
 #sub_nav a {
     text-decoration: none;
-    padding: 20px;
+
     cursor: pointer;
     text-align: center;
-    width: 100px;
+      width: 150px;
+         padding: 0;
 
 }
 
 #sub_nav {
     display: flex;
     flex-direction: row;
-    margin-left: 37vw;
     font-family: var(--main-heading-font);
+    margin-top: 100px;
+    margin-left: 0vw;
+        margin-bottom: 0;
 }
 
 #sub_nav a:hover {
@@ -845,12 +848,6 @@ footer {
         margin-top: 240vh;
     }
 
-    #sub_nav {
-        margin-top: -80px;
-        margin-bottom: 100px;
-        margin-left: 55vw;
-    }
-
     .desktop_gallery {
         display: grid;
     }
@@ -1067,9 +1064,14 @@ footer {
         margin-top: 90px;
     }
 
-    #sub_nav {
-        margin-top: -35px;
-        margin-bottom: 50px;
-        margin-left: 40vw;
+       #sub_nav {
+        margin-top: 100px;
+        margin-left: 0vw;
+        margin-bottom: 0;
+
+    }
+    #sub_nav a {
+        width: 150px;
+         padding: 0;
     }
 }

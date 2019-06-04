@@ -227,9 +227,13 @@ header {
     overflow: hidden;
 }
 
-#myVideo {
+.myVideo {
     width: 100vw;
     overflow: hidden;
+}
+
+#desktop_video {
+    display: none;
 }
 
 /*Logo i toppen af mobil-versionen*/
@@ -255,7 +259,7 @@ header {
     display: none;
 }
 
-/*#myVideo {*/
+/*.myVideo {*/
 /*    position: absolute;*/
 /*    bottom: 0vw;*/
 /*    !*den er sat til 100% fordi man skal kunne se hele videoen, og ikke hvor den er zoomet ind*!*/
@@ -802,6 +806,14 @@ footer {
 }
 
 @media screen and (min-width: 1023px) {
+    #desktop_video {
+        display: block;
+    }
+
+    #mobile_video {
+        display: none;
+    }
+
     #bottom_gallery {
         grid-template-columns: 1fr 1fr;
     }
@@ -914,7 +926,7 @@ footer {
         overflow: hidden;
     }
 
-    #myVideo {
+    .myVideo {
         position: absolute;
         min-width: 100vw;
         min-height: 100vh;

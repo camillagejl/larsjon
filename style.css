@@ -1,6 +1,5 @@
 /* Indholdsfortegnelse: */
 
-
 /*
 
  1. GENERAL
@@ -33,7 +32,6 @@
 
 */
 
-
 /*---------------------------------------------------- 1. GENERAL ---------------------------------------*/
 
 :root {
@@ -60,7 +58,6 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-
 
 /*-------------------------------------------------------- 1.1 TEXT ---------------------------------------*/
 
@@ -114,7 +111,6 @@ h4 {
     font-size: 1.1rem;
 }
 
-
 /*---------------------------------------------------- 2. NAVIGATION ---------------------------------------*/
 
 /*--------------------------------------------------- 2.1 BURGER MENU -------------------------------------*/
@@ -139,7 +135,6 @@ h4 {
     /*margin-top: 15px;*/
     /*margin-right: 10px;*/
 }
-
 
 /*---------------------------------------------------------- 2.2 NAV ---------------------------------------*/
 
@@ -286,9 +281,9 @@ header {
     display: flex;
     /*flex-basis: 1;*/
     flex-direction: row;
-    margin-top: 0.5vh;
-    margin-left: -1vw;
-
+    /*margin-top: 0.5vh;*/
+    /*margin-left: -1vw;*/
+    cursor: pointer;
 }
 
 .facebook_kontakt {
@@ -341,7 +336,6 @@ header {
     color: var(--main-design-color);
 
 }
-
 
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
@@ -404,7 +398,6 @@ section:nth-of-type(odd) .content {
     flex: 1;
 }
 
-
 /*Giver en streg 20px under p'er, og giver 10px margin under stregen*/
 .text_content {
     padding-bottom: 20px;
@@ -432,11 +425,10 @@ overskrifter*/
     text-align: center;
 }
 
-
 /*--------------------------------------------------------- 4.3 BØGER FOR MOUSE DEVICES -----------------------------------------*/
 /*På telefonen følger bøger den generelle styling på siden, men på desktop har vi hover-funktionen*/
 #boeger {
-    height: 100vh;
+    min-height: 80vh;
 }
 
 .bog {
@@ -479,7 +471,6 @@ overskrifter*/
 .is_not_touch_device .bog:hover .bog__details {
     top: 0;
 }
-
 
 /*--------------------------------------------------------- 4.4 GALLERY -----------------------------------------*/
 
@@ -531,7 +522,6 @@ overskrifter*/
         opacity: 1
     }
 }
-
 
 #bottom_gallery {
     display: grid;
@@ -623,14 +613,12 @@ overskrifter*/
     margin: 0;
 }
 
-
 .square {
     height: 10px;
     min-width: 10px;
     margin-right: 10px;
     margin-top: 4px;
 }
-
 
 /*------NEMLIG------*/
 
@@ -655,7 +643,6 @@ overskrifter*/
     z-index: 20;
 }
 
-
 /*------LARSJON------*/
 .larsjon {
     cursor: default;
@@ -677,7 +664,6 @@ overskrifter*/
     position: absolute;
 }
 
-
 /*------BUTIKKEN------*/
 .butikken {
     cursor: default;
@@ -691,7 +677,6 @@ overskrifter*/
     margin-right: 10px;
     margin-top: 4px;
 }
-
 
 /*------------------------------------------------------------- 4.6 NEWS LETTER ----------------------------------------*/
 
@@ -734,7 +719,8 @@ overskrifter*/
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus,
-.form-container input[type=password]:focus {}
+.form-container input[type=password]:focus {
+}
 
 /* Set a style for the submit/login button */
 .form-container .btn {
@@ -763,7 +749,6 @@ overskrifter*/
 .open-button:hover {
     opacity: 1;
 }
-
 
 /*------------------------------------------------------------- 5. FOOTER ----------------------------------------*/
 
@@ -799,7 +784,6 @@ footer {
     margin-left: var(--main-padding);
 }
 
-
 /*----------------------------------------------------- 7. MEDIA QUERIES ---------------------------------------*/
 
 @media screen and (max-width: 365px) {
@@ -807,8 +791,6 @@ footer {
         max-width: 330px;
         width: auto;
     }
-
-
 
     .form-container input[type=text],
     .form-container input[type=password] {
@@ -821,28 +803,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 410px) {
-    #webshop_page {
-        margin-top: 320vh;
-    }
-
-
-    .social_media_icons_kontakt {
-        margin: 0;
-    }
-
-
-}
-
-
-
-
 @media screen and (min-width: 767px) {
-
-    #webshop_page {
-        margin-top: 240vh;
-    }
-
     .desktop_gallery {
         display: grid;
     }
@@ -878,7 +839,6 @@ footer {
     }
 
     #bottom_gallery {
-
         grid-gap: 50px;
         padding: 100px;
     }
@@ -886,13 +846,9 @@ footer {
     #sub_nav {
         margin-left: 50px;
         margin-top: 2vw;
-        margin-bottom: 0vw;
+        margin-bottom: 0;
     }
-
-
 }
-
-
 
 @media screen and (min-width: 1023px) {
     #desktop_video {
@@ -906,7 +862,6 @@ footer {
     #bottom_gallery {
         grid-template-columns: 1fr 1fr;
     }
-
 
     :root {
         --main-padding: 50px;
@@ -970,11 +925,6 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
-
-    #webshop_page {
-        margin-top: 0;
-    }
-
     .header_arrow_blue {
         display: none;
     }
@@ -1044,7 +994,6 @@ footer {
         padding-left: 300px;
         padding-right: 50px;
         margin: 5vh auto 0 auto;
-        max-width: 1300px;
     }
 
     .grid-3 {
@@ -1065,6 +1014,5 @@ footer {
     .map .mapbox {
         margin-top: 90px;
     }
-
 
 }

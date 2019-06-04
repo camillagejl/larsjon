@@ -14,7 +14,7 @@ function start() {
         var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
         var mq = function (query) {
             return window.matchMedia(query).matches;
-        }
+        };
 
         if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
             return true;
@@ -92,7 +92,7 @@ function insertHvemErVi() {
             <section>
                 <div class="content">
                     <div class="image_content">
-                        <img src="${section.billede.guid}">
+                        <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                     </div>
                     <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
@@ -128,7 +128,7 @@ function insertVoresTeam() {
             `
             <div class="team_member sub_section">
                         <div class="image_content">
-                            <img src="${section.billede.guid}">
+                            <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                         </div>
                         <div class="text_content" id="${section.slug}">
                             <h3>${section.navn}</h3>
@@ -165,7 +165,7 @@ function insertFirma_events() {
                 <section>
                 <div class="content">
                     <div class="image_content">
-                        <img src="${section.billede.guid}">
+                        <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                     </div>
                     <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
@@ -202,7 +202,7 @@ function insertBlomsterskolen() {
             <section>
                 <div class="content">
                     <div class="image_content">
-                        <img src="${section.billede.guid}">
+                        <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                     </div>
                     <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
@@ -242,7 +242,7 @@ function insertKurser() {
             `
                 <div class="content_column">
                     <div class="image_content">
-                        <img src="${section.billede.guid}">
+                        <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                     </div>
                     <div class="text_content" id="${section.slug}">
                         <h2>${section.overskrift}</h2>
@@ -276,7 +276,7 @@ function insertBoeger() {
         let template =
             `
 <div class="bog sub_section">
-                    <img src="${section.billede.guid}">
+                    <img src="${section.billede.guid}" alt="Billede til: ${section.title.rendered}">
                     <div class="bog__details text_content" id="${section.slug}">
                         <h3>${section.titel}</h3>
                         <h4>${section.udgivelse}</h4>
@@ -359,13 +359,13 @@ function insertGallery() {
             if (section.galleri_nummer == galleryNumber) {
 
                 section.billeder.forEach(image => {
-                    galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}">`;
+                    galleri.querySelector(".desktop_gallery").innerHTML += `<img src="${image.guid}" alt="Galleri-billede">`;
 
                     let template =
                         `
                             <div class="mySlides fade">
 <!--                            <div class="numbertext"></div>-->
-                            <img src="${image.guid}"></div>
+                            <img src="${image.guid}" alt="Galleri-billede"></div>
 `;
                     galleri.querySelector(".slideshow-container").insertAdjacentHTML("beforeend", template);
 
@@ -398,7 +398,7 @@ async function getBottomGallery() {
 function insertBottomGallery() {
 
     section.billeder.forEach(image => {
-        destBottomGallery.innerHTML += `<img src="${image.guid}">`;
+        destBottomGallery.innerHTML += `<img src="${image.guid}" alt="Galleri-billede">`;
 
 
     });

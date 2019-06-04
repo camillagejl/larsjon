@@ -1006,6 +1006,11 @@ footer {
         margin: 5vh auto 0 auto;
     }
 
+    footer {
+        padding-left: 300px;
+        padding-right: 50px;
+    }
+
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
     }

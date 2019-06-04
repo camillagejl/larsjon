@@ -322,9 +322,9 @@ header {
     text-decoration: none;
 
     cursor: pointer;
-    text-align: center;
-      width: 150px;
-         padding: 0;
+    text-align: left;
+    width: 150px;
+    padding: 0;
 
 }
 
@@ -332,15 +332,16 @@ header {
     display: flex;
     flex-direction: row;
     font-family: var(--main-heading-font);
-    margin-top: 100px;
-    margin-left: 0vw;
-        margin-bottom: 0;
+    margin-top: 0px;
+    margin-left: 2vw;
+    margin-bottom: 2vw;
 }
 
 #sub_nav a:hover {
     color: var(--main-design-color);
 
 }
+
 
 /*----------------------------------------------------------- 4. MAIN ---------------------------------------*/
 
@@ -825,26 +826,20 @@ footer {
         margin-top: 320vh;
     }
 
-    #sub_nav a {
-        margin-left: 8vw;
-        width: auto;
-        padding: 0;
-    }
-
-    #sub_nav {
-        margin-left: -15px;
-        width: auto;
-        padding: 0;
-        margin-bottom: 8vh;
-    }
 
     .social_media_icons_kontakt {
         margin: 0;
     }
+
+
 }
+
+
+
+
 @media screen and (min-width: 767px) {
 
-   #webshop_page {
+    #webshop_page {
         margin-top: 240vh;
     }
 
@@ -886,6 +881,12 @@ footer {
 
         grid-gap: 50px;
         padding: 100px;
+    }
+
+    #sub_nav {
+        margin-left: 50px;
+        margin-top: 2vw;
+        margin-bottom: 0vw;
     }
 
 
@@ -973,6 +974,7 @@ footer {
     #webshop_page {
         margin-top: 0;
     }
+
     .header_arrow_blue {
         display: none;
     }
@@ -1064,14 +1066,5 @@ footer {
         margin-top: 90px;
     }
 
-       #sub_nav {
-        margin-top: 100px;
-        margin-left: 0vw;
-        margin-bottom: 0;
 
-    }
-    #sub_nav a {
-        width: 150px;
-         padding: 0;
-    }
 }

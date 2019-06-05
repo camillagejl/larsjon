@@ -450,8 +450,8 @@ function showSlides() {
 
 
 //--------------NEMLIG--------------
-document.querySelector(".nemligbox").addEventListener("mouseover", changeColor1); //når musen er rør, gå til funktion
-document.querySelector(".nemligbox").addEventListener("mouseout", hoverOut1);
+document.querySelector(".nemligbox").addEventListener("mouseover", changeColor1); //når musen rør .nemligbox, gå til funktion
+document.querySelector(".nemligbox").addEventListener("mouseout", hoverOut1); //når musen kører væk fra .nemligbox, gå til funktion
 
 //--------------LARSJON--------------
 document.querySelector(".larsjon").addEventListener("mouseover", changeColor2);
@@ -467,15 +467,15 @@ document.querySelector(".butikken").addEventListener("mouseout", hoverOut3);
 
 
 //----------------------------NEMLIG----------------------------
-function changeColor1() {
-    console.log("color");
+function changeColor1() { //læser funktionen changeColor1
+    console.log("color"); // vi tjekker at funktionen starter
 
     //HOVER FARVE
     let elements = document.getElementsByClassName("cls-2"); //laver en variabel der tager fat i alle classer ved navn "cls-2"
     let elements2 = document.getElementsByClassName("cls-3");
 
     for (let i = 0; i < elements.length; i++)
-        elements[i].style.fill = "#698fb5";
+        elements[i].style.fill = "#698fb5"; // disse to linjer betyder at: for hvert koordinat der er i variablen "elements", skal der laves en style.fill med farven #698fb5
     for (let i = 0; i < elements2.length; i++)
         elements2[i].style.fill = "#698fb5";
 }
@@ -555,11 +555,11 @@ function hoverOut3() {
 }
 
 function openForm() {
-  document.getElementById("nyhedsbrev_form").style.display = "block";
+    document.getElementById("nyhedsbrev_form").style.display = "block";
 }
 
 function closeForm() {
-  document.getElementById("nyhedsbrev_form").style.display = "none";
+    document.getElementById("nyhedsbrev_form").style.display = "none";
 }
 
 function submitNyhedsbrev() {

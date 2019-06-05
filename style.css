@@ -257,7 +257,34 @@ header {
     /*top: 95vh;*/
     width: auto;
     margin-bottom: 20px;
+    animation-name: slideArrow;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     /*Sørger for, at den ikke er lige så bred som div'en og bliver strukket*/
+}
+
+@keyframes slideArrow {
+    0% {
+        opacity: 0;
+        transform: translateY(-3vh);
+    }
+
+    40% {
+        opacity: 0.5;
+        transform: translateY(-2vh);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-1vh);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(1vh);
+    }
+
 }
 
 /*Skjuler den hvide pil på mobile*/
@@ -725,8 +752,7 @@ overskrifter*/
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
-}
+.form-container input[type=password]:focus {}
 
 /* Set a style for the submit/login button */
 .form-container .btn {
@@ -942,6 +968,8 @@ footer {
         position: absolute;
         left: 50vw;
         bottom: 0;
+
+        padding-left: 100px;
     }
 
     .header_arrow_white {
@@ -1017,6 +1045,7 @@ footer {
     h1 {
         margin: 2vh var(--main-padding) 0 var(--main-padding);
     }
+
 
 }
 

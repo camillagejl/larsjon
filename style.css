@@ -459,15 +459,8 @@ overskrifter*/
 }
 
 /*--------------------------------------------------------- 4.3 BØGER FOR MOUSE DEVICES -----------------------------------------*/
-/*På telefonen følger bøger den generelle styling på siden, men på desktop har vi hover-funktionen*/
 #boeger {
     min-height: 80vh;
-}
-
-.bog {
-    position: relative;
-    /*Sørger for at alt der løber uden for div'en - dvs. uden for billedet - ikke kan ses*/
-    overflow: hidden;
 }
 
 .bog h3 {
@@ -475,19 +468,34 @@ overskrifter*/
     padding: 10px 0 40px 0;
 }
 
-/*Placerer boksen med tekst oven på billedet*/
+/*På telefonen følger bøger den generelle styling på siden, men på desktop har vi hover-funktionen. Denne funktion
+fungerer ved, at vi har .is_not_touch_device tilføjet til HTML'en, og med denne klasse bliver .bog__details dermed
+stylet anderledes.*/
+
+.bog {
+    position: relative;
+    /*Sørger for at alt der løber uden for div'en - dvs. uden for billedet - ikke kan ses. Dette bliver kun relevant
+    med .bog__details-stylingen på ikke-touch-devices.*/
+    overflow: hidden;
+}
+
+/*Styling af hele tekst-boksen på ikke-touch-devices.*/
 .is_not_touch_device .bog__details {
+    /*Placerer boksen med tekst oven på billedet*/
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: #F3F3F3;
-    color: var(--main-design-color);
+    /*Sørger for, at al "animation"/transition på boksen kører på denne måde - dvs. i dette tilfælde, bevægelsen når
+    man hover over bogen.*/
     transition: all 0.5s ease-out;
+    /*Den almindelige styling af tekst-boksen*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: #F3F3F3;
+    color: var(--main-design-color);
     text-align: center;
     padding: 0 10px;
     cursor: pointer;

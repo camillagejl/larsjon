@@ -3,13 +3,20 @@ document.addEventListener("DOMContentLoaded", start);
 function start() {
     console.log('is touch:', is_touch_device());
 
-    // Tjekker, om enheden er touch eller har en mus, og tilføjer den tilsvarende klasse til "html". Denne klasse bruges
-    // til bøgerne, for at vide, om man kan hover over bøgerne eller ej.
-    document.querySelector('html').classList.remove('is_touch_device', 'is_not_touch_device');
+    // Dette stykke tjekker, om enheden er touch eller har en mus, og tilføjer den tilsvarende klasse til "html". Denne
+    // klasse bruges til bøgerne, for at vide, om man kan hover over bøgerne eller ej, da eksempelvis media queries ikke
+    // kan vide, om man evt. sidder på en lille computer eller en stor tablet.
+    document.querySelector('html').classList.remove('is_touch_device', 'is_not_touch_device'); // Sikrer, at HTML fra
+    //start ikke har nogen af klasserne
     document.querySelector('html').classList.add(
-        is_touch_device() ? 'is_touch_device' : 'is_not_touch_device'
+        is_touch_device() ? 'is_touch_device' : 'is_not_touch_device' // Kører funktionen nedenfor, og tilføjer
+        // henholdsvist .is_touch_device eller .is_not_touch_device, alt efter  om funktionen returnerer true eller
+        // false.
     );
 
+    // Funktionen, som tjekker, om man er på et touch device eller ej.
+    // bolmaster2, opdateret 2018.
+    // https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript/19299994#19299994
     function is_touch_device() {
         var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
         var mq = function (query) {

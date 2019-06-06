@@ -493,7 +493,7 @@ overskrifter*/
     cursor: pointer;
 }
 
-/*Placerer tekst-boksen 90% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
+/*Placerer tekst-boksen 85% fra toppen af billedet, og fjerner stregen i bunden af text_content*/
 .is_not_touch_device .bog__details {
     top: 85%;
     border: 0;

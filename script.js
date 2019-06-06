@@ -4,7 +4,7 @@ function start() {
     console.log('is touch:', is_touch_device());
 
     // Tjekker, om enheden er touch eller har en mus, og tilføjer den tilsvarende klasse til "html". Denne klasse bruges
-    // bøgerne, for at vide, om man kan hover over bøgerne eller ej.
+    // til bøgerne, for at vide, om man kan hover over bøgerne eller ej.
     document.querySelector('html').classList.remove('is_touch_device', 'is_not_touch_device');
     document.querySelector('html').classList.add(
         is_touch_device() ? 'is_touch_device' : 'is_not_touch_device'

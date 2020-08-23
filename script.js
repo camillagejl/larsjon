@@ -59,7 +59,10 @@ function start() {
     let lastId;
     let cur = [];
 
+    // EventListeneren lytter efter, at man scroller
     window.addEventListener("scroll", event => {
+        // + 350 tilføjer noget mere til scrollY værdien, for at linjen flytter sig tidligere - uden denne, ville linjen
+        // først flytte sig når man har scrollet så langt ned, at overskriften er ved toppen af skærmen.
         let fromTop = window.scrollY + 350;
 
         mainNavLinks.forEach(link => {
@@ -85,7 +88,7 @@ function start() {
 destHvemErVi = document.querySelector("#hvemervi");
 
 async function getHvemErVi() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/hvemervi?per_page=100";
+    let pagesUrl = "/jsons/hvemervi.json";
     // Vi henter dataen fra en json-fil der hører til "hvem er vi?" podden som vi har liggende i Wordpress //
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
@@ -123,7 +126,7 @@ getHvemErVi();
 destVoresTeam = document.querySelector(".grid");
 
 async function getVoresTeam() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/vores_team?per_page=100";
+    let pagesUrl = "/jsons/vores_team.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertVoresTeam();
@@ -154,12 +157,12 @@ function insertVoresTeam() {
 getVoresTeam();
 
 
-/*************** Firma og events ****************/
+// ----- FIRMA & EVENTS -----
 
 destFirma_events = document.querySelector("#firma_events");
 
 async function getFirma_events() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/firma_events?per_page=100";
+    let pagesUrl = "/jsons/firma_events.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertFirma_events();
@@ -196,7 +199,7 @@ destKurser = document.querySelector("#kurser_info");
 destForedrag = document.querySelector("#foredrag");
 
 async function getBlomsterskolen() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/blomsterskolen?per_page=100";
+    let pagesUrl = "/jsons/blomsterskolen.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertBlomsterskolen();
@@ -237,7 +240,7 @@ getBlomsterskolen();
 destKurserSection = document.querySelector("#kurser");
 
 async function getKurser() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/kurser?per_page=100";
+    let pagesUrl = "/jsons/kurser.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertKurser();
@@ -272,7 +275,7 @@ getKurser();
 destBoeger = document.querySelector("#boeger .grid-3");
 
 async function getBoeger() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/boeger?per_page=100";
+    let pagesUrl = "/jsons/boeger.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertBoeger();
@@ -304,7 +307,7 @@ getBoeger();
 destKontakt = document.querySelector("#find_kontakt");
 
 async function getKontakt() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/kontakt/111";
+    let pagesUrl = "/jsons/kontakt.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertKontakt();
@@ -332,7 +335,7 @@ getKontakt();
 destWebshop = document.querySelector("#webshop");
 
 async function getWebshop() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/webshop/220";
+    let pagesUrl = "/jsons/webshop.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertWebshop();
@@ -349,20 +352,27 @@ getWebshop();
 
 // ----- GALLERIER -----
 
+// Tager fat i ALLE gallerier på siden, altså alle div'er med classen .gallery.
 destGallery = document.querySelectorAll(".gallery");
 
 async function getGallery() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/galleri?per_page=100";
+    let pagesUrl = "/jsons/galleri.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertGallery();
 }
 
 function insertGallery() {
+    // For hvert galleri, kører den funktionen, som finder galleriets nummmer-attribut og indsætter de pågældende
+    // billeder fra Wordpress.
     destGallery.forEach(galleri => {
+        // Variabel som finder galleri-nummeret fra den pågældende galleri-div i HTML'en.
         let galleryNumber = galleri.getAttribute("data-gallery-number");
 
         section.forEach(section => {
+            // Sammenligner "Galleri-nummer" fra Wordpress med data-attributten fra HTML. Hvis de to er ens
+            // (eks gallery-1 == gallery-1), indsætter den billeder fra den pågældende side i Wordpress til den pågældende
+            // div i HTML'en.
             if (section.galleri_nummer == galleryNumber) {
 
                 section.billeder.forEach(image => {
@@ -396,7 +406,7 @@ getGallery();
 destBottomGallery = document.querySelector("#bottom_gallery");
 
 async function getBottomGallery() {
-    let pagesUrl = "https://camillagejl.com/kea/2-semester/larsjon/wordpress/wp-json/wp/v2/galleri/226";
+    let pagesUrl = "/jsons/bottom_gallery.json";
     let jsonData = await fetch(pagesUrl);
     section = await jsonData.json();
     insertBottomGallery();
@@ -477,10 +487,13 @@ document.querySelector(".butikken").addEventListener("mouseout", hoverOut3);
 function changeColor1() { //læser funktionen changeColor1
     console.log("color"); // vi tjekker at funktionen starter
 
-    //HOVER FARVE
+    // HOVER FARVE
     let elements = document.getElementsByClassName("cls-2"); //laver en variabel der tager fat i alle classer ved navn "cls-2"
     let elements2 = document.getElementsByClassName("cls-3");
 
+    // i definerer koordinater i det valgte lag af SVG'en. elements.length er længden på arrayet, altså hvor mange
+    // koordinater der er i alt. i tæller én op med i++ og looper, så den sørger for at vælge alle koordinaterne. Den
+    // ved, at den skal tælle videre, så længe i er mindre end (<) længden af arrayet.
     for (let i = 0; i < elements.length; i++)
         elements[i].style.fill = "#698fb5"; // disse to linjer betyder at: for hvert koordinat der er i variablen "elements", skal der laves en style.fill med farven #698fb5
     for (let i = 0; i < elements2.length; i++)
